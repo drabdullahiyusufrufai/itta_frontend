@@ -24,10 +24,10 @@ export const navs  = [
         link:"https://medium.com/@school.itta/about-us-c12f022cfad3?postPublishedType=repub",
     },
     {
-        title:"About ",
-        link:"/about",
+        title:"Login ",
+        link:"/login",
     },{
-        title:"Register/Login",
+        title:"Register",
         link:"/signup",
     },
     

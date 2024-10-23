@@ -23,21 +23,25 @@ const StudentReviewCard = ({ review }) => {
   };
 
   return (
-    <div className="  md:w-[20vw] w-full my-5 bg-white shadow-lg rounded-lg overflow-hidden">
-      <div className="flex items-center px-6 py-4">
+    <div className="w-full md:w-[80%] lg:w-[30%] max-w-sm bg-white shadow-md rounded-lg overflow-hidden mx-2 my-4 transition-transform transform hover:scale-105">
+      <div className="flex items-center px-4 py-6">
         <img
-          className="w-12 h-12 rounded-full object-cover mr-4"
+          className="w-14 h-14 rounded-full object-cover mr-4 shadow-lg"
           src={review.avatar}
           alt="Student Avatar"
         />
         <div>
-          <h4 className="text-xl font-semibold text-gray-800">{review.studentName}</h4>
+          <h4 className="text-xl font-semibold text-gray-800">
+            {review.studentName}
+          </h4>
           <p className="text-gray-600">{review.courseName}</p>
         </div>
       </div>
       <div className="px-6 py-4">
-        <p className="text-gray-700 text-base">{review.reviewText}</p>
-        <div className="mt-4 flex items-center">
+        <p className="text-gray-700 text-base leading-relaxed mb-4">
+          {review.reviewText}
+        </p>
+        <div className="flex items-center">
           {renderStars(review.rating)}
           <span className="ml-2 text-gray-600">({review.rating}/5)</span>
         </div>

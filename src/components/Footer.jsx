@@ -111,6 +111,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/about"
+                  className="hover:underline"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
                   to={`categories/${"vehicle"}`}
                   className="hover:underline"
                 >

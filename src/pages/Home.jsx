@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { teams } from "../constants/Teams";
-import TeamCard from "../components/TeamCard";
-import { Link } from "react-router-dom";
 import TeamComponent from "../components/TeamComponent";
 import Banner from "../components/Banner";
 import CourseNav from "../components/CoursesComponent";
-import { coursesOffered } from "../constants/courses";
 import StudentReviewCard from "../components/StudentsReview";
 import { reviews } from "../constants/reviews";
 import { motion } from "framer-motion";
@@ -34,29 +30,29 @@ function Home() {
 
       {/* Team Section */}
       <TeamComponent />
-      <div className=" flex justify-center">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${(currentIndex * 100) / (window.innerWidth < 640 ? 1 : 3)}%)`,
-          }}
-        >
-          {reviews.map((review, index) => (
-            <motion.div
-              key={index}
-              className=""
-              initial={{ scale: 0.8 }}
-              animate={{
-                scale: currentIndex === index ? 1 : 0.85,
-                opacity: currentIndex === index ? 1 : 0.7,
-              }}
-              transition={{ duration: 0.5 }}
-            >
-              <StudentReviewCard review={review} />
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      <div className="flex justify-center">
+  <div
+    className="flex transition-transform duration-500 ease-in-out"
+    style={{
+      transform: `translateX(-${(currentIndex * 100) / (window.innerWidth < 640 ? 1 : 3)}%)`,
+    }}
+  >
+    {reviews.map((review, index) => (
+      <motion.div
+        key={index}
+        className=""
+        initial={{ scale: 0.8 }}
+        animate={{
+          scale: currentIndex === index ? 1 : 0.85,
+          opacity: currentIndex === index ? 1 : 0.7,
+        }}
+        transition={{ duration: 0.5 }}
+      >
+        <StudentReviewCard review={review} />
+      </motion.div>
+    ))}
+  </div>
+</div>
     </main>
   );
 }
