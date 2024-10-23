@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import logo from "../assets/images/logo.jpeg";
+import avatar from "../assets/images/avatar.png";
 
-const AuthForm = ({ type, onSubmit, handleGoogleLogin }) => {
+const AuthForm = ({ type, onSubmit }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,15 +30,21 @@ const AuthForm = ({ type, onSubmit, handleGoogleLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
-    setFormData({ name: "", email: "", password: "", terms: false, showPassword: false }); // Reset form data
+    setFormData({
+      name: "",
+      email: "",
+      password: "",
+      terms: false,
+      showPassword: false,
+    }); // Reset form data
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center mt-12 h-100 bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-2xl font-bold mb-6">{type === "login" ? "Login" : "Sign Up"}</h2>
         <div className="w-full h-fit flex items-center justify-center mb-3 ">
-          <img src={logo} width={200} className="rounded-full" alt="Logo" />
+          <img src={avatar} width={200} className="rounded-full" alt="Avatar" />
         </div>
         <form onSubmit={handleSubmit}>
           {type === "signup" && (
@@ -106,14 +112,6 @@ const AuthForm = ({ type, onSubmit, handleGoogleLogin }) => {
             {type === "login" ? "Login" : "Sign Up"}
           </button>
         </form>
-        <div className="my-4 flex items-center justify-center">
-          <button
-            onClick={handleGoogleLogin} // Use the passed Google login function
-            className="flex items-center justify-center w-full bg-white border-[2px] border-[#080a54] text-[#080a54] py-2 px-4 rounded-md hover:bg-[#080a54] hover:text-white hover:border-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-          >
-            {type === "login" ? "Login with Google" : "Sign Up with Google"}
-          </button>
-        </div>
         <div className="mt-4 text-center">
           {type === "login" ? (
             <p>
