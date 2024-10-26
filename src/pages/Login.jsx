@@ -12,7 +12,7 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log('Login successful');
-      navigate('/');
+      navigate('/studentDashboard');
     } catch (error) {
       console.error('Login error:', error);
       // Add error handling here (e.g., show an alert or set an error state)
