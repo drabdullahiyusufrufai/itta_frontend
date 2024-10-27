@@ -54,14 +54,7 @@ const App = () => {
             <Route path="/team" element={<Team />} />
 
             {/* Protect the Dashboard route */}
-            <Route 
-              path="/studentDashboard" 
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <Dashboard />
-                </ProtectedRoute>
-              } 
-            />
+           
           </Routes>
         </main>
         <Footer />
