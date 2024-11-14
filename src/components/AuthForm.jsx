@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-
+import avatar from "../assets/images/avatar.png"
 function AuthForm() {
-  const [signIn, toggle] = useState(true);
+  const [signIn, toggle] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -27,13 +27,14 @@ function AuthForm() {
 
   return (
     <div className="flex items-center justify-center h-screen w-screen bg-gray-100 relative">
-      <div className="bg-white rounded-lg shadow-lg w-[678px] max-w-full min-h-[400px] relative overflow-hidden">
+      <div className=" rounded-lg shadow-lg w-[678px] max-w-full min-h-[70vh] relative overflow-hidden">
         <div
-          className={`absolute top-0 left-0 h-full w-1/2 transition-all duration-600 ease-in-out ${
-            !signIn ? "translate-x-full opacity-100 z-5" : "opacity-0 z-1"
+          className={`absolute top-0 left-0 h-full w-1/2 transition-all duration-1000 ease-in-out ${
+            !signIn ? "translate-x-full opacity-100 z-30" : "opacity-0 z-1"
           }`}
         >
-          <form onSubmit={handleSignUp} className="bg-white flex flex-col items-center justify-center px-12 h-full text-center">
+          <form onSubmit={handleSignUp} className="bg-white z-20 flex flex-col items-center justify-center px-12 h-full text-center">
+            <img src={avatar} width={70} className="my-10" />
             <h1 className="font-bold">Create Account</h1>
             <input
               type="text"
@@ -56,18 +57,21 @@ function AuthForm() {
               onChange={(e) => setPassword(e.target.value)}
               className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
             />
-            <button className="rounded-full border border-red-500 bg-red-500 text-white font-bold uppercase text-sm py-3 px-8 tracking-widest transform active:scale-95 focus:outline-none">
+            <button className="rounded-full border border-[3px] bg-[#619FC8] text-white font-bold uppercase text-sm py-3 px-8 tracking-widest transform active:scale-95 focus:outline-none">
               Sign Up
             </button>
           </form>
         </div>
 
         <div
-          className={`absolute top-0 left-0 h-full w-1/2 transition-all duration-600 ease-in-out ${
+          className={`absolute top-0 left-0 h-full w-1/2 transition-all duration-1000 ease-in-out ${
             signIn ? "" : "translate-x-full"
           }`}
         >
           <form onSubmit={handleSignIn} className="bg-white flex flex-col items-center justify-center px-12 h-full text-center">
+          <img src={avatar} width={70} className="my-10" />
+          
+
             <h1 className="font-bold">Sign in</h1>
             <input
               type="email"
@@ -86,19 +90,21 @@ function AuthForm() {
             <a href="#" className="text-gray-800 text-sm mt-4 mb-6">
               Forgot your password?
             </a>
-            <button className="rounded-full border border-red-500 bg-red-500 text-white font-bold uppercase text-sm py-3 px-8 tracking-widest transform active:scale-95 focus:outline-none">
+            <button className="rounded-full bg-[#619FC8] text-white font-bold uppercase text-sm py-3 px-8 tracking-widest transform active:scale-95 focus:outline-none">
               Sign In
             </button>
           </form>
         </div>
 
+        {/* Overlay  */}
+
         <div
-          className={`absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-transform duration-1000 ease-in-out z-100 ${
+          className={`absolute top-0 left-1/2 w-1/2 hidden md:block h-full overflow-hidden transition-transform duration-1000 ease-in-out z-100 ${
             !signIn ? "-translate-x-full" : ""
           }`}
         >
           <div
-            className={`bg-gradient-to-r from-[#4683b6] to-[#1f7bc6] h-full w-[200%] absolute -left-full transition-transform duration-600 ease-in-out ${
+            className={`bg-gradient-to-r from-[#4683b6] to-[#1f7bc6] h-full w-[200%] absolute -left-full transition-transform duration-1000 ease-in-out ${
               !signIn ? "translate-x-1/2" : ""
             }`}
           >
@@ -113,14 +119,14 @@ function AuthForm() {
               </p>
               <button
                 onClick={() => toggle(true)}
-                className="bg-transparent border border-white text-white font-bold uppercase text-sm py-3 px-8 tracking-widest"
+                className="bg-transparent border border-white rounded-full active:scale-95 text-white font-bold uppercase text-sm py-3 px-8 tracking-widest"
               >
                 Sign In
               </button>
             </div>
 
             <div
-              className={`absolute flex items-center justify-center flex-col px-10 text-center top-0 h-full w-1/2 right-0 transform transition-transform duration-600 ease-in-out ${
+              className={`absolute flex items-center justify-center flex-col px-10 text-center top-0 h-full w-1/2 right-0 transform transition-transform duration-1000 ease-in-out ${
                 !signIn ? "translate-x-[20%]" : "translate-x-0"
               }`}
             >
@@ -130,7 +136,7 @@ function AuthForm() {
               </p>
               <button
                 onClick={() => toggle(false)}
-                className="bg-transparent border border-white text-white font-bold uppercase text-sm py-3 px-8 tracking-widest"
+                className="bg-transparent border border-white active:scale-95 rounded-full text-white font-bold uppercase text-sm py-3 px-8 tracking-widest"
               >
                 Sign Up
               </button>
