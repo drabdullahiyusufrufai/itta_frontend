@@ -1,133 +1,151 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import avatar from "../assets/images/avatar.png";
 
-const AuthForm = ({ type, onSubmit }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    terms: false,
-    showPassword: false,
-  });
+function AuthForm() {
+  const [signIn, toggle] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value, type: inputType, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: inputType === "checkbox" ? checked : value,
-    }));
-  };
-
-  const toggleShowPassword = () => {
-    setFormData((prev) => ({
-      ...prev,
-      showPassword: !prev.showPassword,
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const handleSignIn = (e) => {
     e.preventDefault();
-    onSubmit(formData);
-    setFormData({
-      name: "",
-      email: "",
-      password: "",
-      terms: false,
-      showPassword: false,
-    }); // Reset form data
+    if (email === "user@example.com" && password === "password") {
+      setMessage("Sign-in successful!");
+    } else {
+      setMessage("Invalid email or password.");
+    }
+  };
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    if (email && password && name) {
+      setMessage(`Welcome, ${name}! Account created successfully.`);
+    } else {
+      setMessage("Please fill in all fields.");
+    }
   };
 
   return (
-    <div className="flex items-center justify-center mt-12 h-100 bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 className="text-2xl font-bold mb-6">{type === "login" ? "Login" : "Sign Up"}</h2>
-        <div className="w-full h-fit flex items-center justify-center mb-3 ">
-          <img src={avatar} width={200} className="rounded-full" alt="Avatar" />
-        </div>
-        <form onSubmit={handleSubmit}>
-          {type === "signup" && (
-            <div className="mb-4">
-              <label className="block text-gray-700 mb-2">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your Name"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#080a54]"
-                required
-              />
-            </div>
-          )}
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Email</label>
+    <div className="flex items-center justify-center h-screen w-screen bg-gray-100 relative">
+      <div className="bg-white rounded-lg shadow-lg w-[678px] max-w-full min-h-[400px] relative overflow-hidden">
+        <div
+          className={`absolute top-0 left-0 h-full w-1/2 transition-all duration-600 ease-in-out ${
+            !signIn ? "translate-x-full opacity-100 z-5" : "opacity-0 z-1"
+          }`}
+        >
+          <form onSubmit={handleSignUp} className="bg-white flex flex-col items-center justify-center px-12 h-full text-center">
+            <h1 className="font-bold">Create Account</h1>
+            <input
+              type="text"
+              placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
+            />
             <input
               type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your Email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#080a54]"
-              required
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
             />
-          </div>
-          <div className="mb-4 relative">
-            <label className="block text-gray-700 mb-2">Password</label>
             <input
-              type={formData.showPassword ? "text" : "password"}
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder="Your Password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#080a54]"
-              required
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
             />
-            <button
-              type="button"
-              className="absolute flex right-3 top-[58%] text-sm text-gray-500"
-              onClick={toggleShowPassword}
-            >
-              {formData.showPassword ? <IoMdEye size={25} /> : <IoMdEyeOff size={25} />}
+            <button className="rounded-full border border-red-500 bg-red-500 text-white font-bold uppercase text-sm py-3 px-8 tracking-widest transform active:scale-95 focus:outline-none">
+              Sign Up
             </button>
-          </div>
-          {type === "signup" && (
-            <div className="mb-4 flex items-center">
-              <input
-                type="checkbox"
-                name="terms"
-                checked={formData.terms}
-                onChange={handleChange}
-                className="mr-2 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-[#080a54]"
-                required
-              />
-              <label className="text-gray-700">I agree to the terms and conditions</label>
-            </div>
-          )}
-          <button
-            type="submit"
-            className="w-full bg-[#080a54] text-white py-2 px-4 rounded-md hover:bg-white focus:outline-none hover:text-[#080a54] border-[#080a54] border focus:ring-2 focus:ring-[#080a54] focus:ring-offset-2"
-          >
-            {type === "login" ? "Login" : "Sign Up"}
-          </button>
-        </form>
-        <div className="mt-4 text-center">
-          {type === "login" ? (
-            <p>
-              Don’t have an account?{" "}
-              <Link to="/signup" className="text-indigo-600 hover:underline">Sign Up</Link>
-            </p>
-          ) : (
-            <p>
-              Already have an account?{" "}
-              <Link to="/login" className="text-indigo-600 hover:underline">Login</Link>
-            </p>
-          )}
+          </form>
         </div>
+
+        <div
+          className={`absolute top-0 left-0 h-full w-1/2 transition-all duration-600 ease-in-out ${
+            signIn ? "" : "translate-x-full"
+          }`}
+        >
+          <form onSubmit={handleSignIn} className="bg-white flex flex-col items-center justify-center px-12 h-full text-center">
+            <h1 className="font-bold">Sign in</h1>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
+            />
+            <a href="#" className="text-gray-800 text-sm mt-4 mb-6">
+              Forgot your password?
+            </a>
+            <button className="rounded-full border border-red-500 bg-red-500 text-white font-bold uppercase text-sm py-3 px-8 tracking-widest transform active:scale-95 focus:outline-none">
+              Sign In
+            </button>
+          </form>
+        </div>
+
+        <div
+          className={`absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-transform duration-1000 ease-in-out z-100 ${
+            !signIn ? "-translate-x-full" : ""
+          }`}
+        >
+          <div
+            className={`bg-gradient-to-r from-[#4683b6] to-[#1f7bc6] h-full w-[200%] absolute -left-full transition-transform duration-600 ease-in-out ${
+              !signIn ? "translate-x-1/2" : ""
+            }`}
+          >
+            <div
+              className={`absolute flex items-center justify-center flex-col px-10 text-center top-0 h-full w-1/2 transform transition-transform duration-1000 ease-in-out ${
+                !signIn ? "translate-x-0" : "-translate-x-[20%]"
+              }`}
+            >
+              <h1 className="font-bold text-white">Welcome Back!</h1>
+              <p className="text-sm font-light leading-5 tracking-wide text-white my-5">
+                To keep connected with us please login with your personal info
+              </p>
+              <button
+                onClick={() => toggle(true)}
+                className="bg-transparent border border-white text-white font-bold uppercase text-sm py-3 px-8 tracking-widest"
+              >
+                Sign In
+              </button>
+            </div>
+
+            <div
+              className={`absolute flex items-center justify-center flex-col px-10 text-center top-0 h-full w-1/2 right-0 transform transition-transform duration-600 ease-in-out ${
+                !signIn ? "translate-x-[20%]" : "translate-x-0"
+              }`}
+            >
+              <h1 className="font-bold text-white">Hello, Friend!</h1>
+              <p className="text-sm font-light leading-5 tracking-wide text-white my-5">
+                Enter your personal details and start your journey with us
+              </p>
+              <button
+                onClick={() => toggle(false)}
+                className="bg-transparent border border-white text-white font-bold uppercase text-sm py-3 px-8 tracking-widest"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {message && (
+          <div className="absolute bottom-0 left-0 right-0 bg-gray-100 text-center py-2">
+            {message}
+          </div>
+        )}
       </div>
     </div>
   );
-};
+}
 
 export default AuthForm;
