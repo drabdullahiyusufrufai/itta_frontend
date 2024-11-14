@@ -16,13 +16,13 @@ const AuthForm = () => {
           {/* Sign In Form */}
           <form className="sign-in-form">
             <h2 className="title">Sign in</h2>
-            <div className="input-field">
+            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
               <FaUser className="icon" />
-              <input type="text" placeholder="Username" />
+              <input className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" />
             </div>
-            <div className="input-field">
+            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
               <FaLock className="icon" />
-              <input type="password" placeholder="Password" />
+              <input className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" />
             </div>
             <input type="submit" value="Login" className="btn solid" />
             <p className="social-text">Or Sign in with social platforms</p>
@@ -37,17 +37,17 @@ const AuthForm = () => {
           {/* Sign Up Form */}
           <form className="sign-up-form">
             <h2 className="title">Sign up</h2>
-            <div className="input-field">
+            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
               <FaUser className="icon" />
-              <input type="text" placeholder="Username" />
+              <input className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" />
             </div>
-            <div className="input-field">
+            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
               <FaEnvelope className="icon" />
-              <input type="email" placeholder="Email" />
+              <input className='p-2 bg-transparent focus:outline-none my-1' type="email" placeholder="Email" />
             </div>
-            <div className="input-field">
+            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
               <FaLock className="icon" />
-              <input type="password" placeholder="Password" />
+              <input className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" />
             </div>
             <input type="submit" className="btn" value="Sign up" />
             <p className="social-text">Or Sign up with social platforms</p>
