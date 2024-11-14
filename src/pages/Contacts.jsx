@@ -39,15 +39,15 @@ const ContactUs = () => {
 
       {/* Content */}
       <div className="relative text-center">
-        <h1 className="text-[150px] font-semibold text-[#2D5E88]">Contact Us</h1>
-        <p className="text-lg text-gray-700 mt-2">Keep in touch/stay connected</p>
+        <h1 className="text-[50px] font-semibold text-[#2D5E88]">Contact Us</h1>
+        <p className="text-2xl text-gray-700 mt-2 font-bold">Keep in touch/stay connected</p>
       </div>
     </div>
 
-    <div className="flex flex-col lg:flex-row lg:space-x-60 px-4 py-8 lg:px-16 lg:py-16 bg-gray-50">
+    <div className="flex flex-col lg:flex-row lg:space-x-60 px-[50px] py-8 lg:px-16 lg:py-16 bg-gray-50">
 
       {/* Form Section */}
-      <div className="bg-[#2D5E88] p-6  rounded-lg lg:w-1/2 mb-8 lg:mb-0 shadow-lg">
+      <div className="bg-[#2D5E88] p-6  rounded-lg lg:w-1/2 mb-8 lg:mb-0  shadow-lg">
         <h2 className="text-[55px]  text-white  mb-4">Get in touch</h2>
         <form className="space-y-4 ">
           <div>
@@ -97,14 +97,14 @@ const ContactUs = () => {
 
       {/* Contact Information Section */}
       <div className="lg:w-1/2 text-gray-700 space-y-4">
-      <p className="text-sm">
+      <p className="text-sm mb-20">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
       </p>
-      <div className="space-y-4 flex w-full flex-wrap gap-10">
+      <div className="flex w-full flex-wrap gap-10">
         {contactMethods.map((method) => (
-          <div key={method.id} className="flex items-center space-x-3">
+          <div key={method.id} className="flex flex-col  items-center w-[40%]">
             {method.icon}
-            <p>
+            <p className='flex flex-col'>
               <strong>{method.label}:</strong> {method.info}
             </p>
           </div>
