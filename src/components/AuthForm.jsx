@@ -1,157 +1,93 @@
-import React, { useState } from "react";
-import avatar from "../assets/images/avatar.png"
-function AuthForm() {
-  const [signIn, toggle] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
+import React, { useState } from 'react';
+import '../styles/AuthForm.css';
+import { FaUser, FaLock, FaEnvelope, FaFacebookF, FaTwitter, FaGoogle, FaLinkedinIn } from 'react-icons/fa';
 
-  const handleSignIn = (e) => {
-    e.preventDefault();
-    if (email === "user@example.com" && password === "password") {
-      setMessage("Sign-in successful!");
-    } else {
-      setMessage("Invalid email or password.");
-    }
-  };
+const AuthForm = () => {
+  const [isSignUpMode, setIsSignUpMode] = useState(false);
 
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    if (email && password && name) {
-      setMessage(`Welcome, ${name}! Account created successfully.`);
-    } else {
-      setMessage("Please fill in all fields.");
-    }
+  const toggleMode = () => {
+    setIsSignUpMode((prevMode) => !prevMode);
   };
 
   return (
-    <div className="flex items-center justify-center h-screen w-screen bg-gray-100 relative">
-      <div className=" rounded-lg shadow-lg w-[678px] max-w-full min-h-[70vh] relative overflow-hidden">
-        <div
-          className={`absolute top-0 left-0 h-full w-1/2 transition-all duration-1000 ease-in-out ${
-            !signIn ? "translate-x-full opacity-100 z-30" : "opacity-0 z-1"
-          }`}
-        >
-          <form onSubmit={handleSignUp} className="bg-white z-20 flex flex-col items-center justify-center px-12 h-full text-center">
-            <img src={avatar} width={70} className="my-10" />
-            <h1 className="font-bold">Create Account</h1>
-            <input
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
-            />
-            <button className="rounded-full border border-[3px] bg-[#619FC8] text-white font-bold uppercase text-sm py-3 px-8 tracking-widest transform active:scale-95 focus:outline-none">
-              Sign Up
-            </button>
+    <div className={`authContainer ${isSignUpMode ? 'sign-up-mode' : ''}`}>
+      <div className="forms-container">
+        <div className="signin-signup">
+          {/* Sign In Form */}
+          <form className="sign-in-form">
+            <h2 className="title">Sign in</h2>
+            <div className="input-field">
+              <FaUser className="icon" />
+              <input type="text" placeholder="Username" />
+            </div>
+            <div className="input-field">
+              <FaLock className="icon" />
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" className="btn solid" />
+            <p className="social-text">Or Sign in with social platforms</p>
+            <div className="social-media">
+              <a href="#" className="social-icon"><FaFacebookF /></a>
+              <a href="#" className="social-icon"><FaTwitter /></a>
+              <a href="#" className="social-icon"><FaGoogle /></a>
+              <a href="#" className="social-icon"><FaLinkedinIn /></a>
+            </div>
+          </form>
+
+          {/* Sign Up Form */}
+          <form className="sign-up-form">
+            <h2 className="title">Sign up</h2>
+            <div className="input-field">
+              <FaUser className="icon" />
+              <input type="text" placeholder="Username" />
+            </div>
+            <div className="input-field">
+              <FaEnvelope className="icon" />
+              <input type="email" placeholder="Email" />
+            </div>
+            <div className="input-field">
+              <FaLock className="icon" />
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" className="btn" value="Sign up" />
+            <p className="social-text">Or Sign up with social platforms</p>
+            <div className="social-media">
+              <a href="#" className="social-icon"><FaFacebookF /></a>
+              <a href="#" className="social-icon"><FaTwitter /></a>
+              <a href="#" className="social-icon"><FaGoogle /></a>
+              <a href="#" className="social-icon"><FaLinkedinIn /></a>
+            </div>
           </form>
         </div>
+      </div>
 
-        <div
-          className={`absolute top-0 left-0 h-full w-1/2 transition-all duration-1000 ease-in-out ${
-            signIn ? "" : "translate-x-full"
-          }`}
-        >
-          <form onSubmit={handleSignIn} className="bg-white flex flex-col items-center justify-center px-12 h-full text-center">
-          <img src={avatar} width={70} className="my-10" />
-          
-
-            <h1 className="font-bold">Sign in</h1>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="bg-gray-200 border-none py-3 px-4 my-2 w-full"
-            />
-            <a href="#" className="text-gray-800 text-sm mt-4 mb-6">
-              Forgot your password?
-            </a>
-            <button className="rounded-full bg-[#619FC8] text-white font-bold uppercase text-sm py-3 px-8 tracking-widest transform active:scale-95 focus:outline-none">
-              Sign In
+      <div className="panels-container">
+        {/* Left Panel */}
+        <div className="panel left-panel">
+          <div className="content">
+            <h3>New here?</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex ratione. Aliquid!</p>
+            <button className="btn transparent" onClick={toggleMode}>
+              Sign up
             </button>
-          </form>
+          </div>
+          {/* Insert SVG or other images here */}
         </div>
 
-        {/* Overlay  */}
-
-        <div
-          className={`absolute top-0 left-1/2 w-1/2 hidden md:block h-full overflow-hidden transition-transform duration-1000 ease-in-out z-100 ${
-            !signIn ? "-translate-x-full" : ""
-          }`}
-        >
-          <div
-            className={`bg-gradient-to-r from-[#4683b6] to-[#1f7bc6] h-full w-[200%] absolute -left-full transition-transform duration-1000 ease-in-out ${
-              !signIn ? "translate-x-1/2" : ""
-            }`}
-          >
-            <div
-              className={`absolute flex items-center justify-center flex-col px-10 text-center top-0 h-full w-1/2 transform transition-transform duration-1000 ease-in-out ${
-                !signIn ? "translate-x-0" : "-translate-x-[20%]"
-              }`}
-            >
-              <h1 className="font-bold text-white">Welcome Back!</h1>
-              <p className="text-sm font-light leading-5 tracking-wide text-white my-5">
-                To keep connected with us please login with your personal info
-              </p>
-              <button
-                onClick={() => toggle(true)}
-                className="bg-transparent border border-white rounded-full active:scale-95 text-white font-bold uppercase text-sm py-3 px-8 tracking-widest"
-              >
-                Sign In
-              </button>
-            </div>
-
-            <div
-              className={`absolute flex items-center justify-center flex-col px-10 text-center top-0 h-full w-1/2 right-0 transform transition-transform duration-1000 ease-in-out ${
-                !signIn ? "translate-x-[20%]" : "translate-x-0"
-              }`}
-            >
-              <h1 className="font-bold text-white">Hello, Friend!</h1>
-              <p className="text-sm font-light leading-5 tracking-wide text-white my-5">
-                Enter your personal details and start your journey with us
-              </p>
-              <button
-                onClick={() => toggle(false)}
-                className="bg-transparent border border-white active:scale-95 rounded-full text-white font-bold uppercase text-sm py-3 px-8 tracking-widest"
-              >
-                Sign Up
-              </button>
-            </div>
+        {/* Right Panel */}
+        <div className="panel right-panel">
+          <div className="content">
+            <h3>One of us?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum laboriosam ad deleniti.</p>
+            <button className="btn transparent" onClick={toggleMode}>
+              Sign in
+            </button>
           </div>
+          {/* Insert SVG or other images here */}
         </div>
-
-        {message && (
-          <div className="absolute bottom-0 left-0 right-0 bg-gray-100 text-center py-2">
-            {message}
-          </div>
-        )}
       </div>
     </div>
   );
-}
+};
 
 export default AuthForm;

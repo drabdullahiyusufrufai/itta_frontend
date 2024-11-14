@@ -29,10 +29,10 @@ function Header() {
   }, []);
 
   return (
-    <header
+    <div
       className={`sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-[#2D5E88] text-white`}
     >
-      <div className="container mx-auto flex items-center justify-between px-2 py-3 h-[8vh]">
+      <div className=" mx-auto flex items-center justify-between px-2 py-3 h-[8vh]">
         {/* Logo */}
         <div className="flex items-center mx-auto md:mx-0">
           <img alt="Logo" src={logo1} width={180} className="object-contain" />
@@ -98,7 +98,7 @@ function Header() {
           <HiMenu size={24} />
         </button>
       </div>
-    </header>
+    </div>
   );
 }
 
