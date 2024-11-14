@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { navs } from "../constants/Navs";
 import {NavLink} from "react-router-dom";
-import logo1 from "../assets/images/logo.png";
+import logo1 from "../assets/images/logo/logo.png";
 import { useLocation } from "react-router-dom";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { HiMenu } from "react-icons/hi";
 
 function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -30,7 +30,7 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-[#080a54] text-white`}
+      className={`sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-[#2D5E88] text-white`}
     >
       <div className="container mx-auto flex items-center justify-between px-2 py-3 h-[8vh]">
         {/* Logo */}
@@ -46,8 +46,8 @@ function Header() {
               to={item.link}
               className={({ isActive }) =>
                 isActive
-                  ? "text-pink-600 font-semibold px-3 py-2 rounded hover:scale-110 transition-all duration-300"
-                  : "px-3 py-2 rounded hover:text-pink-600 hover:scale-110 transition-all duration-300"
+                  ? "text-[#253540] font-semibold px-3 py-2 rounded hover:scale-110 transition-all duration-300"
+                  : "px-3 py-2 rounded hover:text-[#253540] hover:scale-110 transition-all duration-300"
               }
             >
               {item.title}
@@ -95,7 +95,7 @@ function Header() {
           ></div>
         )}
         <button className="lg:hidden" onClick={toggleSidebar}>
-          <BsThreeDotsVertical size={24} />
+          <HiMenu size={24} />
         </button>
       </div>
     </header>

@@ -13,7 +13,7 @@ export default {
         // Add more colors as needed
       },
       backgroundImage: {
-        grad_1: 'linear-gradient(to right, #ff6b6b, #3498db)', // Original gradient
+        grad_1: 'linear-gradient(to right,#205E88, #3498db)', // Original gradient
         grad_2: 'linear-gradient(45deg, #f39c12, #e74c3c)', // Diagonal warm orange to red
         grad_3: 'linear-gradient(135deg, #16a085, #2ecc71)', // Reverse diagonal teal to green
         grad_4: 'linear-gradient(90deg, #8e44ad, #2980b9)', // Horizontal purple to blue

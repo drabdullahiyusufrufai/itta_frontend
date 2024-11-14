@@ -1,18 +1,11 @@
 import React from "react";
-import logo from "../assets/images/logo.jpeg";
 import {
-  FaFacebookF,
-  FaTwitter,
+  FaFacebook,
   FaInstagram,
   FaWhatsapp,
-  FaMailBulk,
-  FaPhone,
-  FaFacebook,
 } from "react-icons/fa"; // Importing React Icons
+import { IoArrowUpCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { IoMail } from "react-icons/io5";
-
-import { BsMailbox } from "react-icons/bs";
 
 const Footer = () => {
   // Scroll Back to Top Functionality
@@ -24,151 +17,77 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#080a54]  py-10 border-t">
-      <div className="container mx-auto">
-        {/* Grid Layout for Footer Sections */}
-        <div className="md:grid flex px-4  flex-wrap items-center justify-center gap-x-10 gap-y-10  lg:grid-cols-auto md:grid-cols-4 md:gap-8 text-gray-700">
-        <div className="text-white ">
-            <h3 className="text-lg font-semibold mb-4">Resources</h3>
-            <ul className="text-sm space-y-2">
-              <li>
-                <Link
-                  to="https://medium.com/@school.itta/about-us-c12f022cfad3?postPublishedType=repub"
-                  className="hover:underline"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/cheatsheets"
-                  className="hover:underline"
-                >
-                  CheatSheets
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`categories/${"smartphones"}`}
-                  className="hover:underline"
-                >
-                  Webinars
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`categories/${"vehicle"}`}
-                  className="hover:underline"
-                >
-                  Answers
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="text-white">
-              <h3 className="text-lg font-semibold mb-4">Contacts</h3>
-              <h2 className="flex items-center gap-2 my-3">
-                <IoMail />
-
-                <Link to="https://medium.com/@school.itta/about-us-c12f022cfad3?postPublishedType=repub" className="text-white">shool.itta@gmail.com</Link>
-              </h2>
-            </div>
-            <div>
-              <div className="flex text-white  gap-2 items-center my-3">
-                <FaWhatsapp /> <p>+2347037411315 </p>
-              </div>
-            </div>
-          </div>
-          {/* Quick Links Section */}
-          <div className="text-white ">
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="text-sm space-y-2">
-              <li>
-                <Link
-                  to={`categories/${"electronics"}`}
-                  className="hover:underline"
-                >
-                  Partnership
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`categories/${"womens-clothing"}`}
-                  className="hover:underline"
-                >
-                  Team
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`categories/${"smartphones"}`}
-                  className="hover:underline"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="hover:underline"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`categories/${"vehicle"}`}
-                  className="hover:underline"
-                >
-                  FAQs
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Media Section */}
-          <div>
-            <h3 className="text-lg mt-[-70px] text-white font-semibold mb-4">
-              Follow Us
-            </h3>
-            <div className="flex space-x-4 text-white ">
-              {/* React Icons for Social Media */}
-              <a href="#" aria-label="Facebook" className="hover:text-pink-600">
-                <FaFacebook className="h-6 w-6" />
-              </a>
-              <a href="#" aria-label="Twitter" className="hover:text-pink-600">
-                <FaWhatsapp className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="hover:text-pink-600"
-              >
-                <FaInstagram className="h-6 w-6" />
-              </a>
-              <a href="#" aria-label="Twitter" className="hover:text-pink-600">
-                <FaTwitter className="h-6 w-6" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Back to Top Button */}
-        <div className="mt-10 text-center">
-          <button
-            onClick={scrollToTop}
-            className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
-          >
-            Back to Top
+    <footer className=" text-gray-700">
+      {/* Subscribe Section */}
+      <div className="bg-[#517B9D] text-white text-center py-6 px-4 md:flex md:justify-around md:items-center mx-auto max-w-5xl">
+        <h2 className="text-2xl font-semibold mb-4 md:mb-0">Subscribe for our daily Updates....</h2>
+        <form className="flex flex-col md:flex-row gap-4 w-full max-w-md mx-auto md:max-w-none">
+          <input
+            type="email"
+            required
+            placeholder="Enter your email"
+            className="w-full px-4 py-2 rounded-md text-gray-700 focus:outline-0"
+          />
+          <button className="bg-[#1D2836] px-3 py-2 rounded-md hover:shadow-lg text-white">
+            Subscribe
           </button>
+        </form>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {/* About Section */}
+        <div>
+          <h3 className="text-lg font-bold">ITTA</h3>
+          <p className="mt-2">
+            Join a community of tech enthusiasts and lifelong learners eager to explore, build, and master new skills in cutting-edge technologies.
+          </p>
         </div>
 
-        {/* Footer Bottom Text */}
-        <div className="mt-8 text-center text-sm text-slate-200 ">
-          &copy; {new Date().getFullYear()} ITTA. All rights reserved.
+        {/* Resources Section */}
+        <div>
+          <h3 className="text-lg font-bold">Resources</h3>
+          <ul className="mt-2 space-y-1">
+            <li>Chatsheets</li>
+            <li>Blog</li>
+            <li>Webinars</li>
+          </ul>
         </div>
+
+        {/* Quick Links Section */}
+        <div>
+          <h3 className="text-lg font-bold">Quick Links</h3>
+          <ul className="mt-2 space-y-1">
+            <li>Team</li>
+            <li>Partnership</li>
+            <li>Contact Us</li>
+            <li>Services</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+
+        {/* Social Media Icons */}
+        <div className="flex justify-center md:justify-start space-x-4 mt-4 md:mt-0">
+          <Link to="#" className="text-xl text-gray-800">
+            <FaInstagram size={40} />
+          </Link>
+          <Link to="#" className="text-xl text-gray-800">
+            <FaFacebook size={40} />
+          </Link>
+          <Link to="#" className="text-xl text-gray-800">
+            <FaWhatsapp size={40} />
+          </Link>
+        </div>
+      </div>
+
+      {/* Scroll to Top Button */}
+      <button onClick={scrollToTop} className="w-full my-10 flex items-center justify-center">
+        <IoArrowUpCircleOutline size={60} className="text-gray-800" />
+      </button>
+
+      {/* Copyright Section */}
+      <div className="bg-[#517B9D] text-white py-3 text-center">
+        <p>&copy; Copyright ITTA, All rights reserved</p>
       </div>
     </footer>
   );

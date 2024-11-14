@@ -13,7 +13,8 @@ import Contacts from "./pages/Contacts";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import CheatSheetPage from "./pages/CheatSheets";
-import ProtectedRoute from "./components/ProtectedRoute";  // Import protected route
+import image from "../src/assets/images/bg.jpeg"
+
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -39,7 +40,12 @@ const App = () => {
 
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+    <div
+            className="w-full h-full flex-shrink-0  bg-cover bg-center"
+            style={{ backgroundImage: `url(${image})` }}
+          >
+            <div className="bg-[#ececec] bg-opacity-95">
+
         <Header />
         <main className="flex-1">
           <Routes>
@@ -58,6 +64,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
+            </div>
       </div>
     </Router>
   );

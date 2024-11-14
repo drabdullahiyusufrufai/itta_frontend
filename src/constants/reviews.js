@@ -1,4 +1,4 @@
-import avatar from "../assets/images/avatar.png"
+import avatar from "../assets/images/linux.jpg"
 export   const reviews = [
     {
       studentName: "John Doe",
