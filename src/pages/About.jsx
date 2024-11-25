@@ -24,24 +24,25 @@ const AboutUs = () => {
     {
       icon: <FaChalkboardTeacher size={30} />,
       title: 'Quality Teachers',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description: 'Our team of highly qualified educators brings years of experience and expertise to deliver exceptional lessons. We are committed to providing personalized instruction that caters to the individual needs of each student, ensuring academic success and intellectual growth.',
     },
     {
       icon: <FaAward size={30} />,
       title: 'Global Recognition',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description: 'Our institution is internationally recognized for its excellence in education and the outstanding achievements of our students. We have established partnerships with leading global organizations and universities, providing our learners with opportunities for global exposure and career advancement.',
     },
     {
       icon: <FaGlobe size={30} />,
       title: 'Online Courses',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description: 'We offer a diverse range of online courses that provide flexibility and accessibility for learners worldwide. Our virtual classrooms are equipped with the latest technology, enabling students to engage in interactive learning and gain skills from anywhere at their convenience.',
     },
     {
       icon: <FaUsers size={30} />,
       title: 'Professional Team',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description: 'Our professional team consists of passionate individuals who are dedicated to supporting students throughout their learning journey. From academic advisors to career coaches, each member of our team is committed to providing a seamless and supportive learning experience.',
     },
   ];
+  
 
   const teamMembers = [
     {
@@ -120,18 +121,26 @@ const AboutUs = () => {
         </p>
       </div>
 
-      {/* Services Section */}
-      <div className="flex flex-wrap justify-center gap-5 px-6 lg:px-20 pb-10">
-        {services.map((service, index) => (
-          <div key={index} className="bg-white shadow-lg p-5 rounded-lg flex items-center w-full md:w-1/3 lg:w-1/3 space-x-3">
-            {service.icon}
-            <div>
-              <h4 className="text-lg font-semibold text-gray-700">{service.title}</h4>
-              <p className="text-sm text-gray-500">{service.description}</p>
-            </div>
-          </div>
-        ))}
+   {/* Services Section */}
+<div className="flex flex-wrap justify-center gap-5 px-6 lg:px-20 pb-10">
+  {services.map((service, index) => (
+    <div 
+      key={index} 
+      className="bg-white shadow-lg p-5 rounded-lg flex items-start w-full md:w-1/3 lg:w-1/3"
+    >
+      <div className="flex-shrink-0">
+        <div className="text-blue-500 w-10 h-10 flex items-center justify-center">
+          {service.icon}
+        </div>
       </div>
+      <div className="ml-4">
+        <h4 className="text-lg font-semibold text-gray-700">{service.title}</h4>
+        <p className="text-sm text-gray-500">{service.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
 
       {/* Team Section */}
       <div className="text-center py-10">
@@ -161,7 +170,7 @@ const AboutUs = () => {
             >
               &times;
             </button>
-            <div className="flex">
+            <div className="flex flex-col sm:items-center  md:flex-row">
               <img 
                 src={selectedMember.img} 
                 alt={selectedMember.name} 

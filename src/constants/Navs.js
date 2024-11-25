@@ -12,7 +12,7 @@ export const navs  = [
         link:"/contacts",
     },{
         title:"Team ",
-        link:"/team",
+        link:"/about",
     },
     {
 
@@ -21,7 +21,7 @@ export const navs  = [
     },
     {
         title:"Blog ",
-        link:"https://medium.com/@school.itta/about-us-c12f022cfad3?postPublishedType=repub",
+        link:"Blogs",
     },
     {
         title:"Login ",

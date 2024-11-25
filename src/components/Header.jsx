@@ -57,7 +57,7 @@ function Header() {
 
         {/* Mobile Sidebar */}
         <div
-          className={`fixed top-0 right-0 h-full w-64 bg-[#080a54] shadow-lg transform ${
+          className={`fixed top-0 right-0 h-full w-64 bg-[#2D5E88] shadow-lg transform ${
             isSidebarOpen ? "translate-x-0" : "translate-x-full"
           } transition-transform duration-300 ease-in-out z-50`}
         >
@@ -75,8 +75,8 @@ function Header() {
                   to={nav.link}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-pink-600 font-semibold hover:underline transition-all duration-300"
-                      : "hover:text-pink-600 transition-all duration-300"
+                      ? "text-[#253540]  font-semibold hover:underline transition-all duration-300"
+                      : "hover:text-[#253540]  transition-all duration-300"
                   }
                   onClick={toggleSidebar}
                 >

@@ -98,7 +98,7 @@ function Hero() {
           <img
             src={image2}
             alt="Hero Section"
-            className="rounded-tl-[90px] rounded-br-[90px] rounded-tr-[30px] h-[300px] lg:h-[500px] object-cover w-[250px] lg:w-[400px] rounded-bl-[30px]"
+            className="hidden lg:block rounded-tl-[90px] rounded-br-[90px] rounded-tr-[30px] h-[300px] lg:h-[500px] object-cover w-[250px] lg:w-[400px] rounded-bl-[30px]"
             />
         </div>
       </div>

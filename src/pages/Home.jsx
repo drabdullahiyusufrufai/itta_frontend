@@ -4,7 +4,7 @@ import StudentReviewCard from "../components/StudentsReview";
 import { reviews } from "../constants/reviews";
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
-import CourseCategoriesTabs from "../components/CourseCategories";
+import CourseTabs from "../components/CourseTabs";
 import TrusteesList from "../components/Trustees";
 import image from "../assets/images/bg.jpeg"
 
@@ -23,7 +23,7 @@ function Home() {
     <main
   >
       <Hero />
-      <CourseCategoriesTabs />
+      <CourseTabs />
       <TeamComponent />
       <TrusteesList />
 
