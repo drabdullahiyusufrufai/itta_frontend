@@ -1,30 +1,30 @@
 import React from "react";
-import { FaWhatsapp, FaFacebook, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp, FaFacebook, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import image from "../assets/images/bg/contact.jpeg";
 
 const ContactUs = () => {
   const contactMethods = [
     {
       id: 1,
-      icon: <FaWhatsapp size={50} />,
+      icon: <FaWhatsapp size={40} className="text-[#DBDADA]" />,
       label: "Whatsapp",
       info: "+234 000 000 000",
     },
     {
       id: 2,
-      icon: <FaFacebook size={50} />,
+      icon: <FaFacebook size={40} className="text-[#DBDADA]" />,
       label: "Facebook",
       info: "lorem ipsum...",
     },
     {
       id: 3,
-      icon: <FaPhone size={50} />,
+      icon: <FaPhoneAlt size={40} className="text-[#DBDADA]" />,
       label: "Phone calls",
       info: "+234 000 000 000",
     },
     {
       id: 4,
-      icon: <FaEnvelope size={50} />,
+      icon: <FaEnvelope size={40} className="text-[#DBDADA]" />,
       label: "Email Address",
       info: "example@gmail.com",
     },
@@ -33,101 +33,85 @@ const ContactUs = () => {
   return (
     <div>
       <div
-        className="relative bg-cover bg-center bg-no-repeat h-[50vh] flex items-center justify-center"
+        className="relative bg-cover bg-center bg-no-repeat h-[50vh] flex items-center "
         style={{ backgroundImage: `url(${image})` }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-[#ececec] opacity-60"></div>
+        <div className="absolute inset-0 bg-[#205E88] opacity-60"></div>
 
         {/* Content */}
-        <div className="relative text-center">
-          <h1 className="text-[50px] font-semibold text-[#2D5E88]">
-            Contact Us
-          </h1>
-          <p className="text-xl text-gray-700 mt-2 font-bold">
-            Keep in touch/stay AA http://localhost:5173 ￼connected
+        <div className="relative text-center flex justify-center items-center  flex-col md:ml-44">
+          <h1 className="text-[50px] font-semibold text-white">Contact Us</h1>
+          <p className="text-xl text-white mt-2 font-bold">
+            Keep in touch/stay
           </p>
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row lg:space-x-60 px-[50px] py-8 lg:px-16 lg:py-16 bg-gray-50">
-        {/* Form Section */}
-        <div className="bg-[#2D5E88] p-6  rounded-lg lg:w-1/2 mb-8 lg:mb-0  shadow-lg">
-          <h2 className="text-[55px]  text-white  mb-4">Get in touch</h2>
-          <form className="space-y-4 ">
-            <div>
-              <label className="block text-sm font-medium text-white">
-                Name:
-              </label>
-              <input
-                type="text"
-                placeholder="Your name"
-                className="mt-1 w-full p-2 border border-gray-300 rounded-md"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-white">
-                Email:
-              </label>
-              <input
-                type="email"
-                placeholder="example@gmail.com"
-                className="mt-1 w-full p-2 border border-gray-300 rounded-md"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-white">
-                Subject:
-              </label>
-              <input
-                type="text"
-                placeholder="Title"
-                className="mt-1 w-full p-2 border border-gray-300 rounded-md"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-white">
-                Message:
-              </label>
-              <textarea
-                placeholder="Type here..."
-                className="mt-1 w-full p-2 border border-gray-300 rounded-md"
-                rows="4"
-              ></textarea>
-            </div>
-            <div className="w-full flex items-center justify-center text-white py-2 rounded-md p-4 font-semibold hover:bg-[#123553] transition">
-              <button
-                type="submit"
-                className="w-[70%] flex items-center justify-center bg-[#517B9D] text-white py-2 rounded-full p-4 font-semibold hover:bg-[#123553] transition"
-              >
-                Send Now
-              </button>
-            </div>
-          </form>
-        </div>
-
-        {/* Contact Information Section */}
-        <div className="lg:w-1/2 text-gray-700 space-y-4">
-          <p className="text-sm mb-20">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea.
-          </p>
-          <div className="flex w-full flex-wrap gap-10">
+      <div className="flex h-fit flex-col lg:flex-row md:px-[50px] py-8 lg:px-16 lg:py-16 bg-white lg:mx-28 lg:my-10">
+      {/* Socials */}
+        <div className="bg-[#245E86] sm:ml-[-150px]  h-[80vh] flex flex-col items-center py-6  lg:w-[50%] mb-8 lg:mb-0  shadow-lg">
+          <h2 className="md:text-[45px] text-[25px] font-semibold my-16 text-white ">
+            Social media Handles
+          </h2>
+          <div className="flex flex-col gap-10">
             {contactMethods.map((method) => (
-              <div
-                key={method.id}
-                className="flex flex-col  items-center w-[40%]"
-              >
+              <div key={method.id} className="flex items-center space-x-5">
                 {method.icon}
-                <p className="flex flex-col">
-                  <strong>{method.label}:</strong> {method.info}
-                </p>
+                <p className="flex space-x-3 text-white text-sm">{method.info}</p>
               </div>
             ))}
           </div>
         </div>
+        <div className="md:p-8 rounded-lg md:rounded-r-lg md:rounded-l-none w-full md:w-2/3 mx-auto">
+  <h3 className="text-xl font-semibold mb-6 text-blue-800 text-center">
+    Feel free to drop us a line below
+  </h3>
+  <form className="space-y-6">
+    <div className="flex flex-col">
+      <label htmlFor="name" className="mb-2 text-sm text-gray-700">
+        Name:
+      </label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Your Name"
+        className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+    </div>
+    <div className="flex flex-col">
+      <label htmlFor="email" className="mb-2 text-sm text-gray-700">
+        Email
+      </label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Your Email"
+        className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+    </div>
+    <div className="flex flex-col">
+      <label htmlFor="message" className="mb-2 text-sm text-gray-700">
+        Message:
+      </label>
+      <textarea
+        id="message"
+        rows="4"
+        placeholder="Your Message"
+        className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+    </div>
+    <div className="flex justify-center">
+      <button
+        type="submit"
+        className="11 md:w-auto bg-blue-800 text-white p-3 rounded-lg hover:bg-blue-900 transition"
+      >
+        SEND
+      </button>
+    </div>
+  </form>
+</div>
+
       </div>
     </div>
   );
