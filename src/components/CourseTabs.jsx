@@ -32,8 +32,15 @@ function CourseTabs() {
               index === 0 ? "bg-[#E7F1F6]" : "bg-white"
             } rounded-md shadow-sm`}
           >
+            <img
+              src={subcategory.image}
+              alt={subcategory.name}
+              className="w-full h-40 object-cover rounded-md mb-4"
+            />
+            <div>
             <p className="font-bold text-gray-800">{subcategory.name}</p>
             <p className="text-sm my-3">{subcategory.description}</p>
+              </div>
           </div>
         ))}
       </div>
