@@ -25,22 +25,8 @@ function Home() {
   >
       <Hero />
       <CourseTabs />
-      <TeamComponent />
-     
-
-      {/* <div className="relative w-full overflow-hidden my-10">
-        <div
-          className=" transition-transform flex items-center justify-center  duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)`, display:"flex", alignItems:"center", justifyContent:"center" }}
-        >
-          {reviews.map((review, index) => (
-            <div className="flex-shrink-0 w-full" key={index}>
-              <StudentReviewCard review={review} />
-            </div>
-          ))}
-        </div>
-      </div> */}
       <ReviewSlider reviews={reviews} />
+      <TeamComponent />
       <TrusteesList />
     </main>
   );
