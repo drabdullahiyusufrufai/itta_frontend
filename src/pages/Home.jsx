@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import TeamComponent from "../components/TeamComponent";
-import StudentReviewCard from "../components/StudentsReview";
+import StudentReviewCard from "../components/ReviewCard";
 import { reviews } from "../constants/reviews";
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import CourseTabs from "../components/CourseTabs";
 import TrusteesList from "../components/Trustees";
 import image from "../assets/images/bg.jpeg"
+import ReviewSlider from "../components/ReviewSlide";
 
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,9 +26,9 @@ function Home() {
       <Hero />
       <CourseTabs />
       <TeamComponent />
-      <TrusteesList />
+     
 
-      <div className="relative w-full overflow-hidden my-10">
+      {/* <div className="relative w-full overflow-hidden my-10">
         <div
           className=" transition-transform flex items-center justify-center  duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)`, display:"flex", alignItems:"center", justifyContent:"center" }}
@@ -38,7 +39,9 @@ function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
+      <ReviewSlider reviews={reviews} />
+      <TrusteesList />
     </main>
   );
 }

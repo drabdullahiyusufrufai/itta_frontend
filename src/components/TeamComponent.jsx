@@ -27,7 +27,7 @@ function TeamComponent() {
         ))}
       </div>
     </div>
-    <Link to={"/Team"} className="px-4 text-pink-600 bg-[#080a54] font-bold rounded-md py-2">
+    <Link to={"/about"} className="px-4 text-slate-300 bg-[#253540]  font-bold rounded-md py-2">
       {" "}
       see more
     </Link>
