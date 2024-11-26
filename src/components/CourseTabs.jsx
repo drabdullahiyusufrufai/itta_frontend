@@ -24,11 +24,11 @@ function CourseTabs() {
       </div>
 
       {/* Tab Content */}
-      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
         {courseCategories[activeTab]?.subcategories.map((subcategory, index) => (
           <div
             key={subcategory.id}
-            className={`p-5 ${
+            className={`p-2 ${
               index === 0 ? "bg-[#E7F1F6]" : "bg-white"
             } rounded-md shadow-sm`}
           >
