@@ -4,6 +4,8 @@ import {
   FaRegArrowAltCircleLeft,
   FaRegArrowAltCircleRight,
 } from "react-icons/fa";
+import { LuArrowLeftCircle,LuArrowRightCircle } from "react-icons/lu";
+
 
 const ReviewSlider = ({ reviews }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,7 +26,7 @@ const ReviewSlider = ({ reviews }) => {
 
   return (
     <div className="flex items-center justify-center py-10 bg-gray-100">
-      <div className="relative rounded-md shadow-md bg-white w-full max-w-5xl overflow-hidden my-10">
+      <div className="relative rounded-3xl shadow-md bg-white w-full max-w-5xl overflow-hidden my-10">
         {/* Slide Container */}
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -43,7 +45,7 @@ const ReviewSlider = ({ reviews }) => {
             onClick={goToPrevious}
             className="text-black px-3 py-2 focus:outline-none"
           >
-            <FaRegArrowAltCircleLeft size={40} className="text-gray-400" />
+            <LuArrowLeftCircle size={40} className="text-blue-600" />
           </button>
         </div>
         <div className="absolute inset-y-0 right-0 flex items-center">
@@ -51,7 +53,7 @@ const ReviewSlider = ({ reviews }) => {
             onClick={goToNext}
             className="text-black px-3 py-2 focus:outline-none"
           >
-            <FaRegArrowAltCircleRight size={40} className="text-gray-400" />
+            <LuArrowRightCircle  size={40} className="text-blue-600" />
           </button>
         </div>
 

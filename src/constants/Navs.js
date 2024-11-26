@@ -24,11 +24,11 @@ export const navs  = [
         link:"Blogs",
     },
     {
-        title:"Login ",
-        link:"/login",
-    },{
-        title:"Register",
+        title:"Signup  ",
         link:"/signup",
+    },{
+        title:"Signin",
+        link:"/signin",
     },
     
 ]

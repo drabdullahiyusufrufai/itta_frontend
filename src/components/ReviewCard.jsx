@@ -19,7 +19,7 @@ const ReviewCard = ({ review }) => {
             “
           </p>
         <div className="text-gray-800 text-base sm:text-lg leading-relaxed">
-          <p className="italic">{review.reviewText}</p>
+          <p className="">{review.reviewText}</p>
         </div>
 
         {/* Name and Title */}
@@ -27,7 +27,7 @@ const ReviewCard = ({ review }) => {
           <p className="font-semibold text-base sm:text-lg">
             {review.studentName}
           </p>
-          <p className="text-sm sm:text-base text-gray-600">
+          <p className="text-sm italic sm:text-base text-gray-600">
             {review.courseName}
           </p>
         </div>
