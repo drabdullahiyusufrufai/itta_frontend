@@ -40,7 +40,7 @@ const ContactUs = () => {
         <div className="absolute inset-0 bg-[#205E88] opacity-60"></div>
 
         {/* Content */}
-        <div className="relative text-center flex justify-center items-center  flex-col md:ml-44">
+        <div className="relative text-center flex justify-center items-center flex-col md:ml-44">
           <h1 className="text-[50px] font-semibold text-white">Contact Us</h1>
           <p className="text-xl text-white mt-2 font-bold">
             Keep in touch/stay

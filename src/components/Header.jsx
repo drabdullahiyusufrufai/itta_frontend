@@ -4,15 +4,14 @@ import {NavLink} from "react-router-dom";
 import logo1 from "../assets/images/logo/logo.png";
 import { useLocation } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
-import { FaUser } from "react-icons/fa";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 
 
 function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
   const [path, setPath] = useState("");
   const location = useLocation();
+  console.log(location)
 
   useEffect(() => {
     setPath(location.pathname);
@@ -33,8 +32,9 @@ function Header() {
 
   return (
     <div
-      className={`sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-[#2D5E88] text-white`}
+      className={`${path=="/books" || path=="/courses"?"hidden":""} sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-[#2D5E88] text-white`}
     >
+      
       <div className=" mx-auto flex items-center justify-between px-2 py-3 h-[8vh]">
         {/* Logo */}
         <div className="flex items-center mx-auto md:mx-0">

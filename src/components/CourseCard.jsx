@@ -1,7 +1,7 @@
 import React from "react";
 const CourseCard = ({ title, description, image, progress }) => {
     return (
-      <div className="bg-white rounded-lg shadow-md p-4 max-w-sm">
+      <div className="bg-white hover:scale-105 transition-all ease-in-out duration-500 rounded-lg shadow-md p-4 max-w-sm">
         <img
           src={image}
           alt={title}
