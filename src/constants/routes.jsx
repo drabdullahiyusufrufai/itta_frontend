@@ -12,7 +12,7 @@ import CheatSheetPage from "../pages/CheatSheets";
 
 const routes = [
   { path: "/", element: <Home /> },
-  { path: "/login", element: <Login /> },
+  { path: "/signin", element: <Login /> },
   { path: "/signup", element: <Signup /> },
   { path: "/about", element: <About /> },
   { path: "/blogs", element: <Blogs /> },

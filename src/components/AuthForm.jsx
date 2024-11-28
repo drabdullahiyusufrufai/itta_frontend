@@ -7,8 +7,32 @@ import { HiOutlineUser } from 'react-icons/hi';
 
 
 
-const AuthForm = () => {
-  const [isSignUpMode, setIsSignUpMode] = useState(false);
+const AuthForm = ({status, onSubmit, handleGoogleLogin}) => {
+  const [isSignUpMode, setIsSignUpMode] = useState(status);
+  const [formData, setFormData] = useState({
+    name:"",
+    email:"",
+    password:"",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(
+      (prev)=>({...prev, [name]:value}),
+    );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(formData);
+    console.log(formData);
+    
+    setFormData({
+      name:"",
+      email:"",
+      password:"",
+    });
+  };
 
   const toggleMode = () => {
     setIsSignUpMode((prevMode) => !prevMode);
@@ -19,42 +43,44 @@ const AuthForm = () => {
       <div className="forms-container">
         <div className="signin-signup">
           {/* Sign In Form */}
-          <form className="sign-in-form">
+          <form className="auth-form sign-in-form">
             <h2 className="title">Sign in</h2>
             <div className="border-[1px] border-slate-400 flex items-center gap-5 bg-slate-50 px-2 my-1 rounded-lg">
               <HiOutlineUser className="icon" />
-              <input className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" />
+              <input  className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" name='email' onChange={handleChange} />
             </div>
             <div className="border-[1px] border-slate-400 flex items-center gap-5 bg-slate-50 px-2 my-1 rounded-lg">
               <FaLock className="icon" />
-              <input className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" />
+              <input  className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" name='password' onChange={handleChange}  />
             </div>
-            <input type="submit" value="Login" className="btn solid" />
+            <button  type="button" onClick={handleSubmit} value="Login" className="btn solid" >
+              Sign In
+            </button>
             <p className="social-text">Or Sign in with social platforms</p>
             <div className="social-media">
               <a href="#" className="social-icon"><FaFacebookF /></a>
               <a href="#" className="social-icon"><FaTwitter /></a>
-              <a href="#" className="social-icon"><FaGoogle /></a>
+              <button  type="submit" className="social-icon"><FaGoogle /></button>
               <a href="#" className="social-icon"><FaLinkedinIn /></a>
             </div>
           </form>
 
           {/* Sign Up Form */}
-          <form className="sign-up-form ">
+          <form className="auth-form sign-up-form ">
             <h2 className="title">Sign up</h2>
-            <div className=" flex  items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
+            <div className=" flex border-[1px] border-slate-400 px-2 my-1 items-center gap-5 bg-slate-50   rounded-lg">
               <FaUser className="icon" />
-              <input className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" />
+              <input  className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" name='name' onChange={handleChange} />
             </div>
-            <div className=" flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
+            <div className=" flex border-[1px] border-slate-400 px-2 my-1 items-center gap-5 bg-slate-50   rounded-lg">
               <FaEnvelope className="icon" />
-              <input className='p-2 bg-transparent focus:outline-none my-1' type="email" placeholder="Email" />
+              <input  className='p-2 bg-transparent focus:outline-none my-1' type="email" placeholder="Email" name='email'  onChange={handleChange} />
             </div>
-            <div className=" flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
+            <div className=" flex border-[1px] border-slate-400 px-2 my-1 items-center gap-5 bg-slate-50   rounded-lg">
               <FaLock className="icon" />
-              <input className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" />
+              <input  className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" name='password' onChange={handleChange}  />
             </div>
-            <button type="button" className="btn" value="Sign up">Sign up</button>
+            <button type="submit" className="btn" onClick={handleSubmit} value="Sign up">Sign up</button>
             <p className="social-text">Or Sign up with social platforms</p>
             <div className="social-media">
               <a href="#" className="social-icon"><FaFacebookF /></a>

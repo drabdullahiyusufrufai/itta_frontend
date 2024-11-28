@@ -5,6 +5,7 @@ import teamImage2 from '../assets/images/linux.jpg';
 import teamImage3 from '../assets/images/linux.jpg';
 import teamImage4 from '../assets/images/linux.jpg';
 import teamImage5 from '../assets/images/linux.jpg';
+import CustomHeader from '../components/CustomHeader';
 
 const AboutUs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -105,16 +106,12 @@ const AboutUs = () => {
   return (
     <div className="bg-gray-100">
       {/* Header Section */}
-      <div className="relative bg-cover bg-center h-64" style={{ backgroundImage: 'url(/path-to-header-image.jpg)' }}>
-        <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
-          <h2 className="text-white text-4xl font-bold">About Us</h2>
-        </div>
-      </div>
+      <CustomHeader title={"ABOUT "} description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} />
 
       {/* Learning Section */}
       <div className="px-6 lg:px-20 py-10 text-center space-y-4">
         <h3 className="text-3xl font-semibold text-gray-700">
-          LEARNING <span className="text-blue-500">MADE EASY</span>
+          LEARNING <span className="text-text">MADE EASY</span>
         </h3>
         <p className="text-gray-500 max-w-2xl mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -129,7 +126,7 @@ const AboutUs = () => {
       className="bg-white shadow-lg p-5 rounded-lg flex items-start w-full md:w-1/3 lg:w-1/3"
     >
       <div className="flex-shrink-0">
-        <div className="text-blue-500 w-10 h-10 flex items-center justify-center">
+        <div className="text-text w-10 h-10 flex items-center justify-center">
           {service.icon}
         </div>
       </div>

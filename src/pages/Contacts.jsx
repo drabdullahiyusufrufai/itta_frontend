@@ -1,6 +1,7 @@
 import React from "react";
 import { FaWhatsapp, FaFacebook, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import image from "../assets/images/bg/contact.jpeg";
+import CustomHeader from "../components/CustomHeader";
 
 const ContactUs = () => {
   const contactMethods = [
@@ -32,26 +33,14 @@ const ContactUs = () => {
 
   return (
     <div>
-      <div
-        className="relative bg-cover bg-center bg-no-repeat h-[50vh] flex items-center "
-        style={{ backgroundImage: `url(${image})` }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-primary opacity-60"></div>
+    
 
-        {/* Content */}
-        <div className="relative text-center flex justify-center items-center flex-col md:ml-44">
-          <h1 className="text-[50px] font-semibold text-white">Contact Us</h1>
-          <p className="text-xl text-white mt-2 font-bold">
-            Keep in touch/stay
-          </p>
-        </div>
-      </div>
+      <CustomHeader image={image}  title={"Contact Us"} description={"  Keep in touch/stay"}  />
 
-      <div className="flex h-fit flex-col lg:flex-row md:px-[50px] py-8 lg:px-16 lg:py-16 bg-white lg:mx-28 lg:my-10">
+      <div className="flex h-fit flex-col lg:flex-row md:px-[50px] py-8 lg:px-16  lg:py-16 bg-white lg:mx-28 lg:my-10">
       {/* Socials */}
         <div className="bg-[#245E86] sm:ml-[-150px]  h-[80vh] flex flex-col items-center py-6  lg:w-[50%] mb-8 lg:mb-0  shadow-lg">
-          <h2 className="md:text-[45px] text-[25px] font-semibold my-16 text-white ">
+          <h2 className="md:text-[25px] text-[15px] font-semibold my-16 text-white ">
             Social media Handles
           </h2>
           <div className="flex flex-col gap-10">
@@ -63,12 +52,12 @@ const ContactUs = () => {
             ))}
           </div>
         </div>
-        <div className="md:p-8 rounded-lg md:rounded-r-lg md:rounded-l-none w-full md:w-2/3 mx-auto">
+        <div className=" rounded-lg md:rounded-r-lg md:rounded-l-none w-full mx-auto px-24 ">
   <h3 className="text-xl font-semibold mb-6 text-blue-800 text-center">
     Feel free to drop us a line below
   </h3>
-  <form className="space-y-6">
-    <div className="flex flex-col">
+  <form className="flex flex-col w-full  ">
+    <div className="flex flex-col mb-3">
       <label htmlFor="name" className="mb-2 text-sm text-gray-700">
         Name:
       </label>
@@ -79,7 +68,7 @@ const ContactUs = () => {
         className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
     </div>
-    <div className="flex flex-col">
+    <div className="flex mb-3 flex-col">
       <label htmlFor="email" className="mb-2 text-sm text-gray-700">
         Email
       </label>
@@ -90,7 +79,7 @@ const ContactUs = () => {
         className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
     </div>
-    <div className="flex flex-col">
+    <div className="flex mb-3 flex-col">
       <label htmlFor="message" className="mb-2 text-sm text-gray-700">
         Message:
       </label>
@@ -101,10 +90,10 @@ const ContactUs = () => {
         className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
     </div>
-    <div className="flex justify-center">
+    <div className="flex justify-center w-full">
       <button
-        type="submit"
-        className="11 md:w-auto bg-blue-800 text-white p-3 rounded-lg hover:bg-blue-900 transition"
+      
+        className=" w-full bg-primary text-white p-3 rounded-lg hover:bg-blue-900 transition"
       >
         SEND
       </button>

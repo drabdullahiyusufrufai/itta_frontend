@@ -19,12 +19,10 @@ import { HiChevronDoubleDown, HiChevronDown } from "react-icons/hi";
 const Courses = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Function to handle the search input
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  // Function to filter courses based on search query
   const filterCourses = (courses) => {
     return courses.filter(
       (course) =>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { navs } from "../constants/Navs";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo1 from "../assets/images/logo/logo.png";
 import { useLocation } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
@@ -19,14 +19,7 @@ function Header() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  useEffect(() => {
-    function handleScroll() {
-      setIsScrolling(window.scrollY > 0);
-    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div
@@ -36,9 +29,9 @@ function Header() {
     >
       <div className="flex items-center justify-between px-2 py-3 h-[8vh]">
         {/* Logo */}
-        <div className="flex items-center">
+        <Link to={"/"} className="flex items-center">
           <img alt="Logo" src={logo1} width={180} className="object-contain" />
-        </div>
+        </Link >
 
         {/* Desktop and Tablet Navigation */}
         <nav className="hidden lg:flex space-x-6">
@@ -48,7 +41,7 @@ function Header() {
               to={item.link}
               className={({ isActive }) =>
                 isActive
-                  ? "text-[#253540] font-semibold px-3 py-2 rounded hover:scale-110 transition-all duration-300"
+                  ? `${ item.title === "Signin"? "bg-white flex items-center gap-4 px-3 py-2 font-bold rounded text-[#185c8a] hover:text-[#253540] hover:scale-110 transition-all duration-300":"text-[#253540] font-semibold px-3 py-2 rounded hover:scale-110 transition-all duration-300"}`
                   : `${
                       item.title === "Signin"
                         ? "bg-white flex items-center gap-4 px-3 py-2 font-bold rounded text-[#185c8a] hover:text-[#253540] hover:scale-110 transition-all duration-300"

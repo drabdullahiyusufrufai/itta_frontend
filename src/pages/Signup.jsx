@@ -7,22 +7,20 @@ import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const navigate = useNavigate();
 
-  const handleSignup = async (data) => {
-    const { email, password, name } = data;
+  const handleSignup = async (formdata) => {
+    const {email, password} = formdata
+    console.log("Signup", email, password);
+    
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      // Here you would save the user's name to Firestore or your database
       console.log("Signup successful");
       navigate("/login");
     } catch (error) {
-      console.error("Signup error:", error);
-      // Add error handling here
+      console.error("Signup error:", error.message);
     }
   };
 
-  return (
-    <AuthForm type="signup" onSubmit={handleSignup} />
-  );
+  return <AuthForm status={true} onSubmit={handleSignup} />;
 };
 
 export default Signup;
