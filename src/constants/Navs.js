@@ -11,7 +11,7 @@ export const navs  = [
         title:"Contacts",
         link:"/contacts",
     },{
-        title:"Team ",
+        title:"About ",
         link:"/about",
     },
     {

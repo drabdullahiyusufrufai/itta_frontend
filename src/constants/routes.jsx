@@ -7,7 +7,7 @@ import Blogs from "../pages/Blogs";
 import BlogView from "../pages/BlogView";
 import Contacts from "../pages/Contacts";
 import About from "../pages/About";
-import Team from "../pages/Team";
+import Books from "../pages/Books";
 import CheatSheetPage from "../pages/CheatSheets";
 
 const routes = [
@@ -19,7 +19,7 @@ const routes = [
   { path: "/blog/:id", element: <BlogView /> },
   { path: "/courses", element: <Courses /> },
   { path: "/contacts", element: <Contacts /> },
-  { path: "/team", element: <Team /> },
+  { path: "/books", element: <Books /> },
   { path: "/cheatsheets", element: <CheatSheetPage /> },
 ];
 

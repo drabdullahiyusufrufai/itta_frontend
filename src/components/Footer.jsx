@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-gray-700">
+    <footer className="text-gray-700 ">
       {/* Subscribe Section */}
       <div className="bg-[#517B9D] text-white text-center py-6 px-4 md:flex md:justify-between md:items-center max-w-7xl mx-auto">
         <h2 className="text-2xl font-semibold mb-4 md:mb-0">

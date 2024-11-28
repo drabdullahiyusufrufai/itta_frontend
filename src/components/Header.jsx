@@ -8,32 +8,27 @@ import { HiOutlineUserCircle } from "react-icons/hi2";
 
 function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [path, setPath] = useState("");
   const location = useLocation();
 
-  useEffect(() => {
-    setPath(location.pathname);
-  }, [location]);
+  // Define routes where the header should be hidden
+  const hiddenRoutes = ["/blogs", "/courses", "/books"];
+
+  // Check if the current route matches a hidden route
+  const isHeaderHidden = hiddenRoutes.includes(location.pathname);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-
+  if (isHeaderHidden) return null; // Hide the header if the current route is in hiddenRoutes
 
   return (
-    <div
-      className={`${
-        path === "/blogs" || path === "/courses" ? "hidden" : ""
-      } sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-primary text-white`}
-    >
+    <div className="sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-primary text-white">
       <div className="flex items-center justify-between px-2 py-3 h-[8vh]">
-        {/* Logo */}
-        <Link to={"/"} className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img alt="Logo" src={logo1} width={180} className="object-contain" />
-        </Link >
+        </Link>
 
-        {/* Desktop and Tablet Navigation */}
         <nav className="hidden lg:flex space-x-6">
           {navs.map((item, index) => (
             <NavLink
@@ -41,7 +36,11 @@ function Header() {
               to={item.link}
               className={({ isActive }) =>
                 isActive
-                  ? `${ item.title === "Signin"? "bg-white flex items-center gap-4 px-3 py-2 font-bold rounded text-[#185c8a] hover:text-[#253540] hover:scale-110 transition-all duration-300":"text-[#253540] font-semibold px-3 py-2 rounded hover:scale-110 transition-all duration-300"}`
+                  ? `${
+                      item.title === "Signin"
+                        ? "bg-white flex items-center gap-4 px-3 py-2 font-bold rounded text-[#185c8a] hover:text-[#253540] hover:scale-110 transition-all duration-300"
+                        : "text-[#253540] font-semibold px-3 py-2 rounded hover:scale-110 transition-all duration-300"
+                    }`
                   : `${
                       item.title === "Signin"
                         ? "bg-white flex items-center gap-4 px-3 py-2 font-bold rounded text-[#185c8a] hover:text-[#253540] hover:scale-110 transition-all duration-300"
@@ -55,7 +54,6 @@ function Header() {
           ))}
         </nav>
 
-        {/* Mobile Sidebar */}
         <div
           className={`fixed top-0 right-0 h-full w-64 bg-primary shadow-lg transform ${
             isSidebarOpen ? "translate-x-0" : "translate-x-full"
@@ -87,7 +85,6 @@ function Header() {
           </div>
         </div>
 
-        {/* Backdrop Overlay */}
         {isSidebarOpen && (
           <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
@@ -95,7 +92,6 @@ function Header() {
           ></div>
         )}
 
-        {/* Hamburger Menu */}
         <button
           className="lg:hidden"
           onClick={toggleSidebar}

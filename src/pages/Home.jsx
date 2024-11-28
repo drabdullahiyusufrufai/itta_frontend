@@ -11,6 +11,9 @@ import ReviewSlider from "../components/ReviewSlide";
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+
+
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);

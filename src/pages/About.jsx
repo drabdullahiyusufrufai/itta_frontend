@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { FaChalkboardTeacher, FaAward, FaGlobe, FaUsers, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-import teamImage1 from '../assets/images/linux.jpg'; // Replace with actual images
-import teamImage2 from '../assets/images/linux.jpg';
-import teamImage3 from '../assets/images/linux.jpg';
-import teamImage4 from '../assets/images/linux.jpg';
-import teamImage5 from '../assets/images/linux.jpg';
 import CustomHeader from '../components/CustomHeader';
 import bgImage from "../assets/images/machine.jpg"
+import { teamMembers } from '../constants/Teams';
+import { services } from '../constants/service';
 
 const AboutUs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,87 +19,9 @@ const AboutUs = () => {
     setSelectedMember(null);
   };
 
-  const services = [
-    {
-      icon: <FaChalkboardTeacher size={30} />,
-      title: 'Quality Teachers',
-      description: 'Our team of highly qualified educators brings years of experience and expertise to deliver exceptional lessons. We are committed to providing personalized instruction that caters to the individual needs of each student, ensuring academic success and intellectual growth.',
-    },
-    {
-      icon: <FaAward size={30} />,
-      title: 'Global Recognition',
-      description: 'Our institution is internationally recognized for its excellence in education and the outstanding achievements of our students. We have established partnerships with leading global organizations and universities, providing our learners with opportunities for global exposure and career advancement.',
-    },
-    {
-      icon: <FaGlobe size={30} />,
-      title: 'Online Courses',
-      description: 'We offer a diverse range of online courses that provide flexibility and accessibility for learners worldwide. Our virtual classrooms are equipped with the latest technology, enabling students to engage in interactive learning and gain skills from anywhere at their convenience.',
-    },
-    {
-      icon: <FaUsers size={30} />,
-      title: 'Professional Team',
-      description: 'Our professional team consists of passionate individuals who are dedicated to supporting students throughout their learning journey. From academic advisors to career coaches, each member of our team is committed to providing a seamless and supportive learning experience.',
-    },
-  ];
+ 
   
 
-  const teamMembers = [
-    {
-      name: 'John Doe',
-      role: 'Supervisor',
-      img: teamImage1,
-      description: 'John has over 10 years of experience supervising projects and ensuring team success.',
-      social: {
-        facebook: 'https://facebook.com/johndoe',
-        twitter: 'https://twitter.com/johndoe',
-        instagram: 'https://instagram.com/johndoe',
-      },
-    },
-    {
-      name: 'Jane Smith',
-      role: 'Project Manager',
-      img: teamImage2,
-      description: 'Jane excels in project management and has led multiple international initiatives.',
-      social: {
-        facebook: 'https://facebook.com/janesmith',
-        twitter: 'https://twitter.com/janesmith',
-        instagram: 'https://instagram.com/janesmith',
-      },
-    },
-    {
-      name: 'Mark Johnson',
-      role: 'Lead Developer',
-      img: teamImage3,
-      description: 'Mark is a seasoned developer with expertise in modern web technologies.',
-      social: {
-        facebook: 'https://facebook.com/markjohnson',
-        twitter: 'https://twitter.com/markjohnson',
-        instagram: 'https://instagram.com/markjohnson',
-      },
-    },
-    {
-      name: 'Emily Davis',
-      role: 'UI/UX Designer',
-      img: teamImage4,
-      description: 'Emily crafts intuitive designs and enhances user experiences.',
-      social: {
-        facebook: 'https://facebook.com/emilydavis',
-        twitter: 'https://twitter.com/emilydavis',
-        instagram: 'https://instagram.com/emilydavis',
-      },
-    },
-    {
-      name: 'Michael Brown',
-      role: 'Marketing Specialist',
-      img: teamImage5,
-      description: 'Michael drives brand growth through innovative marketing strategies.',
-      social: {
-        facebook: 'https://facebook.com/michaelbrown',
-        twitter: 'https://twitter.com/michaelbrown',
-        instagram: 'https://instagram.com/michaelbrown',
-      },
-    },
-  ];
 
   return (
     <div className="bg-gray-100">
@@ -169,11 +88,18 @@ const AboutUs = () => {
               &times;
             </button>
             <div className="flex flex-col sm:items-center  md:flex-row">
-              <img 
-                src={selectedMember.img} 
-                alt={selectedMember.name} 
-                className="w-1/2 h-auto rounded-lg object-cover"
-              />
+            <div className="w-full lg:w-1/3 flex justify-center mb-6 lg:mb-0">
+              <div className="relative p-4 border border-primary rounded-md ">
+                <img
+                  src={selectedMember.img}
+                  alt={selectedMember.name}
+                  className="w-64 h-64 object-cover rounded-md"
+                />
+                {/* Decorative Corners */}
+                <div className=" rounded-tl-md absolute border-t-2 border-l-2 border-text top-2 left-2 w-12 h-12" />
+                <div className=" rounded-br-md absolute border-b-2 border-r-2 border-text bottom-2 right-2 w-12 h-12" />
+              </div>
+            </div>
               <div className="ml-6">
                 <h4 className="text-2xl font-bold text-gray-800">{selectedMember.name}</h4>
                 <p className="text-gray-500 italic">{selectedMember.role}</p>

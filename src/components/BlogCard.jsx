@@ -17,7 +17,7 @@ function BlogCard({blog}) {
       <p className="text-gray-600 mb-4">{blog.description}</p>
       <Link
       to={`/blog/${blog.id}`}
-        className="text-blue-500 font-medium hover:underline"
+        className="text-text font-medium hover:underline"
       >
         Read more...
       </Link>
