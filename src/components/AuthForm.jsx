@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import '../styles/AuthForm.css';
 import { FaUser, FaLock, FaEnvelope, FaFacebookF, FaTwitter, FaGoogle, FaLinkedinIn } from 'react-icons/fa';
+import signImImage from "../assets/images/svg/log.svg"
+import signUpImage from "../assets/images/svg/register.svg"
+import { HiOutlineUser } from 'react-icons/hi';
+
+
 
 const AuthForm = () => {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
@@ -16,11 +21,11 @@ const AuthForm = () => {
           {/* Sign In Form */}
           <form className="sign-in-form">
             <h2 className="title">Sign in</h2>
-            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
-              <FaUser className="icon" />
+            <div className="border-[1px] border-slate-400 flex items-center gap-5 bg-slate-50 px-2 my-1 rounded-lg">
+              <HiOutlineUser className="icon" />
               <input className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" />
             </div>
-            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
+            <div className="border-[1px] border-slate-400 flex items-center gap-5 bg-slate-50 px-2 my-1 rounded-lg">
               <FaLock className="icon" />
               <input className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" />
             </div>
@@ -35,25 +40,24 @@ const AuthForm = () => {
           </form>
 
           {/* Sign Up Form */}
-          <form className="sign-up-form">
+          <form className="sign-up-form ">
             <h2 className="title">Sign up</h2>
-            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
+            <div className=" flex  items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
               <FaUser className="icon" />
               <input className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" />
             </div>
-            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
+            <div className=" flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
               <FaEnvelope className="icon" />
               <input className='p-2 bg-transparent focus:outline-none my-1' type="email" placeholder="Email" />
             </div>
-            <div className="input-field flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
+            <div className=" flex items-center gap-5 bg-slate-50 p-1 my-2 rounded-lg">
               <FaLock className="icon" />
               <input className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" />
             </div>
-            <input type="submit" className="btn" value="Sign up" />
+            <button type="button" className="btn" value="Sign up">Sign up</button>
             <p className="social-text">Or Sign up with social platforms</p>
             <div className="social-media">
               <a href="#" className="social-icon"><FaFacebookF /></a>
-              <a href="#" className="social-icon"><FaTwitter /></a>
               <a href="#" className="social-icon"><FaGoogle /></a>
               <a href="#" className="social-icon"><FaLinkedinIn /></a>
             </div>
@@ -71,7 +75,7 @@ const AuthForm = () => {
               Sign up
             </button>
           </div>
-          {/* Insert SVG or other images here */}
+         <img src={signUpImage} className='image' />
         </div>
 
         {/* Right Panel */}
@@ -83,7 +87,7 @@ const AuthForm = () => {
               Sign in
             </button>
           </div>
-          {/* Insert SVG or other images here */}
+          <img src={signImImage} className='image' />
         </div>
       </div>
     </div>

@@ -87,7 +87,7 @@ const Footer = () => {
       </button>
 
       {/* Copyright Section */}
-      <div className="bg-[#517B9D] text-white py-3 text-center">
+      <div className="bg-primary text-white py-3 text-center">
         <p>&copy; Copyright ITTA, All rights reserved</p>
       </div>
     </footer>

@@ -88,7 +88,7 @@ function Hero() {
           </p>
           <Link
             to={"/signup"}
-          className="bg-white   text-[#2571A1] lg:text-lg text-sm font-bold py-3 px-8 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="bg-white   text-text lg:text-lg text-sm font-bold py-3 px-8 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
             >
             Enroll Now
           </Link>

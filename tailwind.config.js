@@ -7,9 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        grad_1: '#ff6b6b', // Example of a custom color
+        primary: ' #2D5E88', // Example of a custom color
         secondary: '#3498db', // Another custom color
         accent: '#f39c12', // Additional custom color
+        text:"#2571A1"
+      
         // Add more colors as needed
       },
       backgroundImage: {

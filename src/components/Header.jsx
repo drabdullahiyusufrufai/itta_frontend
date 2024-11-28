@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { navs } from "../constants/Navs";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo1 from "../assets/images/logo/logo.png";
 import { useLocation } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 
-
 function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [path, setPath] = useState("");
   const location = useLocation();
-  console.log(location)
 
   useEffect(() => {
     setPath(location.pathname);
@@ -32,12 +30,13 @@ function Header() {
 
   return (
     <div
-      className={`${path=="/blogs" || path=="/courses"?"hidden":""} sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-[#2D5E88] text-white`}
+      className={`${
+        path === "/blogs" || path === "/courses" ? "hidden" : ""
+      } sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-primary text-white`}
     >
-      
-      <div className=" mx-auto flex items-center justify-between px-2 py-3 h-[8vh]">
+      <div className="flex items-center justify-between px-2 py-3 h-[8vh]">
         {/* Logo */}
-        <div className="flex items-center mx-auto md:mx-0">
+        <div className="flex items-center">
           <img alt="Logo" src={logo1} width={180} className="object-contain" />
         </div>
 
@@ -50,15 +49,14 @@ function Header() {
               className={({ isActive }) =>
                 isActive
                   ? "text-[#253540] font-semibold px-3 py-2 rounded hover:scale-110 transition-all duration-300"
-                  : `${item.title=="Signin"?"bg-white flex items-center gap-4 px-3 py-2 font-bold rounded text-[#185c8a] hover:text-[#253540] hover:scale-110 transition-all duration-300":" px-3 py-2 rounded hover:text-[#253540] hover:scale-110 transition-all duration-300"}`
+                  : `${
+                      item.title === "Signin"
+                        ? "bg-white flex items-center gap-4 px-3 py-2 font-bold rounded text-[#185c8a] hover:text-[#253540] hover:scale-110 transition-all duration-300"
+                        : "px-3 py-2 rounded hover:text-[#253540] hover:scale-110 transition-all duration-300"
+                    }`
               }
             >
-              {
-                item.title == "Signin"?(
-
-                  <HiOutlineUserCircle size={25} /> 
-                ):""
-              }
+              {item.title === "Signin" && <HiOutlineUserCircle size={25} />}
               {item.title}
             </NavLink>
           ))}
@@ -66,7 +64,7 @@ function Header() {
 
         {/* Mobile Sidebar */}
         <div
-          className={`fixed top-0 right-0 h-full w-64 bg-[#2D5E88] shadow-lg transform ${
+          className={`fixed top-0 right-0 h-full w-64 bg-primary shadow-lg transform ${
             isSidebarOpen ? "translate-x-0" : "translate-x-full"
           } transition-transform duration-300 ease-in-out z-50`}
         >
@@ -84,8 +82,8 @@ function Header() {
                   to={nav.link}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-[#253540]  font-semibold hover:underline transition-all duration-300"
-                      : "hover:text-[#253540]  transition-all duration-300"
+                      ? "text-[#253540] font-semibold hover:underline transition-all duration-300"
+                      : "hover:text-[#253540] transition-all duration-300"
                   }
                   onClick={toggleSidebar}
                 >
@@ -103,7 +101,13 @@ function Header() {
             onClick={toggleSidebar}
           ></div>
         )}
-        <button className="lg:hidden" onClick={toggleSidebar}>
+
+        {/* Hamburger Menu */}
+        <button
+          className="lg:hidden"
+          onClick={toggleSidebar}
+          aria-label="Open Sidebar"
+        >
           <HiMenu size={24} />
         </button>
       </div>

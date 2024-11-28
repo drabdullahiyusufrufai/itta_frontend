@@ -38,7 +38,7 @@ const Blogs = () => {
           ))}
         </div>
         <div className="text-center mt-8">
-          <button className="px-6 py-2 bg-[#245E86] text-white rounded-md shadow hover:bg-[#2f81b9] hover:shadow-sm transition-colors duration-300">
+          <button className="px-6 py-2 bg-primary text-white rounded-md shadow hover:bg-[#2f81b9] hover:shadow-sm transition-colors duration-300">
             Load More Blogs
           </button>
         </div>

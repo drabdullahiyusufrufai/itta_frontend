@@ -37,7 +37,7 @@ const ContactUs = () => {
         style={{ backgroundImage: `url(${image})` }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-[#205E88] opacity-60"></div>
+        <div className="absolute inset-0 bg-primary opacity-60"></div>
 
         {/* Content */}
         <div className="relative text-center flex justify-center items-center flex-col md:ml-44">
