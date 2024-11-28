@@ -1,16 +1,16 @@
 import React from "react";
-import { HiOutlineSearch, HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
+import { HiOutlineSearch, HiOutlineMoon, HiOutlineSun, HiMenuAlt1, HiX } from "react-icons/hi";
 import { FaUserCircle } from "react-icons/fa";
 import logo from "../assets/images/logo/logo.png";
 import { Link } from "react-router-dom";
 
 export const Header = ({ toggleSidebar }) => (
-    <div className="flex items-center justify-between px-6 py-4 bg-[#0e314f] sticky top-0 z-50 text-white">
+    <div className="flex items-center justify-between gap-3 px-3 py-4 bg-[#0e314f] sticky top-0 z-40 text-white">
       <button
         className="block md:hidden text-white"
         onClick={toggleSidebar}
       >
-        <HiOutlineSearch size={30} />
+        <HiMenuAlt1 size={30} />
       </button>
       <input
         type="text"
@@ -18,7 +18,6 @@ export const Header = ({ toggleSidebar }) => (
         className="w-full max-w-sm px-4 py-2 text-sm rounded-full bg-white shadow-md focus:outline-none"
       />
       <div className="flex items-center space-x-4">
-        <HiOutlineSearch size={20} />
         <FaUserCircle size={30} />
       </div>
     </div>
@@ -27,11 +26,13 @@ export const Header = ({ toggleSidebar }) => (
 
   export const Sidebar = ({ toggleDarkMode, isDarkMode, isSidebarOpen, toggleSidebar }) => (
     <div
-      className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 p-6 shadow-lg transition-transform duration-300 ${
+      className={`fixed z-50 lg:z-10 top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 p-6 shadow-lg transition-transform duration-300 ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       } md:translate-x-0`}
     >
       <nav className="space-y-6 text-textPrimary dark:text-textDark">
+        <div className="flex items-center justify-between">
+
         <Link to={"/"} className=" flex items-center gap-2">
             <img src={logo} className="w-16" /> <p className="text-lg font-semibold">
                 Courses
@@ -39,6 +40,11 @@ export const Header = ({ toggleSidebar }) => (
                 </p>
                 
                 </Link>
+                <button onClick={toggleSidebar} className="p-1 border-[2px] sm:hidden rounded-full" >
+                    
+                <HiX />
+                </button>
+        </div>
         <ul className="space-y-3">
           <li>My Favorites</li>
           <li>My Collections</li>
