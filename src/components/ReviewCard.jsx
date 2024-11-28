@@ -15,7 +15,7 @@ const ReviewCard = ({ review }) => {
       {/* Quote and Details */}
       <div className="sm:w-2/3 flex flex-col items-center  w-full sm:pl-8 mt-4 sm:mt-0 text-center sm:text-left">
         {/* Quote Text */}
-          <p className="text-blue-500 text-4xl sm:text-6xl font-bold flex justify-center sm:justify-start">
+          <p className="text-[#245E86] text-4xl sm:text-6xl font-bold flex justify-center sm:justify-start">
             “
           </p>
         <div className="text-gray-800 text-base sm:text-lg leading-relaxed">

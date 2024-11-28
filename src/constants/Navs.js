@@ -21,7 +21,7 @@ export const navs  = [
     },
     {
         title:"Blog ",
-        link:"Blogs",
+        link:"blogs",
     },
     {
         title:"Signup  ",

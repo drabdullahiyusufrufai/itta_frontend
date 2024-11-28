@@ -32,7 +32,7 @@ function Header() {
 
   return (
     <div
-      className={`${path=="/books" || path=="/courses"?"hidden":""} sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-[#2D5E88] text-white`}
+      className={`${path=="/blogs" || path=="/courses"?"hidden":""} sticky top-0 left-0 py-2 w-full z-50 transition-all duration-500 bg-[#2D5E88] text-white`}
     >
       
       <div className=" mx-auto flex items-center justify-between px-2 py-3 h-[8vh]">

@@ -45,7 +45,7 @@ const ReviewSlider = ({ reviews }) => {
             onClick={goToPrevious}
             className="text-black px-3 py-2 focus:outline-none"
           >
-            <LuArrowLeftCircle size={40} className="text-blue-600" />
+            <LuArrowLeftCircle size={40} className="text-[#245E86]" />
           </button>
         </div>
         <div className="absolute inset-y-0 right-0 flex items-center">
@@ -53,18 +53,18 @@ const ReviewSlider = ({ reviews }) => {
             onClick={goToNext}
             className="text-black px-3 py-2 focus:outline-none"
           >
-            <LuArrowRightCircle  size={40} className="text-blue-600" />
+            <LuArrowRightCircle  size={40} className="text-[#245E86]" />
           </button>
         </div>
 
         {/* Dots for Navigation */}
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div className="absolute bottom-2 lg:left-[55%] left-1/2  transform -translate-x-1/2 flex space-x-2">
           {reviews.map((_, index) => (
             <button
               key={index}
               className={`w-3 h-3 rounded-full ${
                 currentIndex === index
-                  ? "bg-blue-500"
+                  ? "bg-[#245E86]"
                   : "bg-gray-300"
               }`}
               onClick={() => setCurrentIndex(index)}

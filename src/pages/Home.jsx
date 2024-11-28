@@ -58,9 +58,9 @@ function Home() {
 
       {/* Trustees Section */}
       <section className="w-full py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Our Trustees
+        <div className="container flex flex-col items-center mx-auto px-4">
+          <h2 className="text-sm text-center mb-8 lg:w-1/2">
+          Over 8 companies trust our services and are optimistic that they will be the best in the world
           </h2>
           <TrusteesList />
         </div>

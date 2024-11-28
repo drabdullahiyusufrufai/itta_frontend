@@ -40,7 +40,7 @@ const Courses = () => {
         <div className="flex item-center  w-1/2 gap-3">
           <Link to={"/"} >
 
-        <img src={logo} alt="ITTA Learning" className="bg-blue-900 w-16" />
+        <img src={logo} alt="ITTA Learning" className="bg-[#245E86] w-16" />
           </Link>
         <input 
           type="text"
@@ -65,16 +65,24 @@ const Courses = () => {
     </DropdownMenuLabel>
     <DropdownMenuSeparator className="border-t border-gray-200" />
     <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+      <Link to={"/signup"}>
       Profile
+      </Link>
     </DropdownMenuItem>
     <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-      Billing
+    <Link to={"/signup"}>
+      Notification
+      </Link>
     </DropdownMenuItem>
     <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-      Team
+    <Link to={"/signup"}>
+      Books
+      </Link>
     </DropdownMenuItem>
     <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-      Subscription
+    <Link to={"/signup"}>
+      Settings
+      </Link>
     </DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
