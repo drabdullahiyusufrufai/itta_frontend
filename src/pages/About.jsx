@@ -6,6 +6,7 @@ import teamImage3 from '../assets/images/linux.jpg';
 import teamImage4 from '../assets/images/linux.jpg';
 import teamImage5 from '../assets/images/linux.jpg';
 import CustomHeader from '../components/CustomHeader';
+import bgImage from "../assets/images/machine.jpg"
 
 const AboutUs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -106,7 +107,7 @@ const AboutUs = () => {
   return (
     <div className="bg-gray-100">
       {/* Header Section */}
-      <CustomHeader title={"ABOUT "} description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} />
+      <CustomHeader title={"ABOUT "} description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} image={bgImage} />
 
       {/* Learning Section */}
       <div className="px-6 lg:px-20 py-10 text-center space-y-4">
