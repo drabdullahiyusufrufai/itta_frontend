@@ -1,6 +1,8 @@
 import React from "react";
 import { HiOutlineSearch, HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
 import { FaUserCircle } from "react-icons/fa";
+import logo from "../assets/images/logo/logo.png";
+import { Link } from "react-router-dom";
 
 export const Header = ({ toggleSidebar }) => (
     <div className="flex items-center justify-between px-6 py-4 bg-[#0e314f] sticky top-0 z-50 text-white">
@@ -30,7 +32,13 @@ export const Header = ({ toggleSidebar }) => (
       } md:translate-x-0`}
     >
       <nav className="space-y-6 text-textPrimary dark:text-textDark">
-        <div className="text-lg font-semibold">Courses</div>
+        <Link to={"/"} className=" flex items-center gap-2">
+            <img src={logo} className="w-16" /> <p className="text-lg font-semibold">
+                Courses
+
+                </p>
+                
+                </Link>
         <ul className="space-y-3">
           <li>My Favorites</li>
           <li>My Collections</li>
