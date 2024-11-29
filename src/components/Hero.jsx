@@ -52,7 +52,7 @@ function Hero() {
           </div>
 
           <div>
-            <div className="text-[24px] md:text-[49px] font-bold text-[#394956]">
+            <div className="text-[18px] md:text-[49px] font-bold text-[#394956]">
               EXPLORE YOUR LEARNING ON
             </div>
 
