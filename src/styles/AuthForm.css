@@ -386,7 +386,7 @@ body,
     padding: 0.5rem 1rem;
   }
   .authContainer {
-    padding: 1.5rem;
+    padding: 50px;
   }
 
   .authContainer:before {
@@ -400,7 +400,11 @@ body,
   }
   .authContainer.sign-up-mode .signin-signup {
     left: 50%;
+
   }
+.auth-form input {
+  width: 100%;
+}
 
   
 }
