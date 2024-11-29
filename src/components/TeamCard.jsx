@@ -16,41 +16,24 @@ function TeamCard({ team,index }) {
               viewport={{ once: true, amount: 0.2 }} // Trigger only once when 20% of the element is in view
               transition={{ duration: 0.5, delay: index *0.2 }}
     
-    className="lg:w-[20%] w-[40%] md rounded-lg hover:shadow-2xl  my-2 shadow-md md:flex items-center overflow-hidden gap-2 ">
-      <Link to={"/team"}>
-        <div className=" w-full  ">
-          <img
-            src={team.image}
-            width={250}
-            height={250}
-            className=" transition-all duration-300 w-full h-full hover:scale-110"
-          />
-        </div>
-      </Link>
-      <div className="px-5 py-5 md:flex flex-col gap-5">
-        <div className=" ">
+    className="lg:w-[20%] md rounded-lg hover:shadow-2xl  my-2 shadow-md md:flex items-center overflow-hidden gap-2 ">
+     
+    
+            <div 
+              key={index} 
+              className="bg-white shadow-lg rounded-lg w-40 p-4 text-center cursor-pointer"
+              onClick={() => openModal(member)}
+            >
+              <img src={team.img} alt={team.name} className="w-full h-40 rounded-md object-cover" />
+              <h4 className="text-gray-700 font-bold mt-4">{team.name}</h4>
+              <p className="text-gray-500 text-sm">{team.role}</p>
+            </div>
+     
+        
 
-        <p>{team.name}</p>
-
-        <p>{team.expertise}</p>
-      </div>
-
-      <div className="flex gap-5">
-        <Link to={team.socialMedia.facebook}>
-          <FaFacebook />
-        </Link>
-
-        <Link to={team.socialMedia.linkedin}>
-          <FaLinkedin />
-        </Link>
-
-        <Link to={team.socialMedia.twitter}>
-          <FaTwitter />
-        </Link>
-      </div>
-        </div>
     </ motion.div>
   );
 }
 
 export default TeamCard;
+
