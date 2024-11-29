@@ -47,17 +47,19 @@ function Hero() {
 
         <div className="w-full lg:w-1/2 space-y-8">
           <div className="flex items-center gap-5 justify-center lg:justify-start">
-            <div className="text-[50px] h-[88px] w-[2px] bg-[#394956]" />
-            <p className="text-[24px]">About Us</p>
+            <div className=" md:h-[88px] h-[50px] w-[2px] bg-[#394956]" />
+            <p className="md:text-[24px] text-xl">About Us</p>
           </div>
 
           <div>
-            <div className="text-[32px] lg:text-[49px] font-bold text-[#394956]">
+            <div className="text-[24px]md:text-[49px] font-bold text-[#394956]">
               EXPLORE YOUR LEARNING ON
             </div>
 
             <TypeAnimation
               sequence={[
+                "Data",
+                1000,
                 "MACHINE LEARNING",
                 1000,
                 "ARTIFICIAL INTELLIGENCE",
@@ -66,16 +68,21 @@ function Hero() {
                 1000,
                 "SOFTWARE DEVEOPMENT",
                 1000,
+                "Business",
+                1000,
+                "And many more",
+                1000,
               ]}
               wrapper="span"
-              speed={50}
-              style={{
-                fontSize: "32px",
-                display: "inline-block",
-                color: "#2571A1",
-                fontWeight: "bold",
-              }}
+              speed={10}
+              // style={{
+              //   fontSize: "32px",
+              //   display: "inline-block",
+              //   color: "#2571A1",
+              //   fontWeight: "bold",
+              // }}
               repeat={Infinity}
+              className=" text-textPrimary font-bold text-lg md:text-[32px]"
               />
           </div>
           <div>
@@ -88,7 +95,7 @@ function Hero() {
           </p>
           <Link
             to={"/signup"}
-          className="bg-white   text-text lg:text-lg text-sm font-bold py-3 px-8 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="bg-white text-text lg:text-lg text-sm font-bold py-3 px-8 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
             >
             Enroll Now
           </Link>
