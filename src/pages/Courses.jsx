@@ -1,26 +1,17 @@
-import React, { useState } from "react";
-import { myCourses, recommendations } from "../constants/data";
+import React, { useState, useEffect } from "react";
+import { recommendations } from "../constants/data";
 import { coursesOffered } from "../constants/courses";
 import CourseCard from "../components/CourseCard";
-import logo from "../assets/images/logo/logo.png";
-import { Link } from "react-router-dom";
-import { HiOutlineUserCircle } from "react-icons/hi2";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu";
 
-import { HiChevronDown } from "react-icons/hi";
+import SideBar from "../components/SideBar";
+import SearchBar from "../components/SearchBar";
 
 const Courses = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
+    console.log(e.target.value);
   };
 
   const filterCourses = (courses) => {
@@ -31,78 +22,78 @@ const Courses = () => {
     );
   };
 
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      if (newMode) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
+      return newMode;
+    });
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      {/* Header */}
-      <div className="flex shadow-lg px-4 rounded-sm justify-between sticky top-0 bg-gray-100 z-50 py-4  items-center mb-8">
-        <div className="flex item-center  w-1/2 gap-3">
-          <Link to={"/"}>
-            <img src={logo} alt="ITTA Learning" className="bg-[#245E86] w-16" />
-          </Link>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={handleSearch}
-            placeholder="Search..."
-            className="p-3 border-[1px] border-gray-700 rounded-lg  w-full "
-          />
-        </div>
+    <div className=" min-h-screen">
+      <SideBar 
+      
+      toggleDarkMode={toggleDarkMode}
+      isDarkMode={isDarkMode}
+      isSidebarOpen={isSidebarOpen}
+      toggleSidebar={toggleSidebar}
+      title={"Courses"} />
+      <div className="md:ml-64">
+    
+      <SearchBar handleSearch={handleSearch} toggleSidebar={toggleSidebar} />
+        <div className="container mx-auto px-4 py-8">
+          {/* My Courses Section */}
+          <h2 className="text-xl font-semibold mb-4">My Courses</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {filterCourses(coursesOffered).map((course, index) => (
+              <CourseCard
+                key={index}
+                title={course.title}
+                description={course.description}
+                image={course.image}
+                progress={course.progress}
+              />
+            ))}
+          </div>
 
-        <DropdownMenu>
-          <DropdownMenuTrigger className="px-4 py-2  flex items-center gap-4 rounded-md shadow ">
-            <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-lg font-bold">
-              <HiOutlineUserCircle />
-            </div>
-            <HiChevronDown />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-            <DropdownMenuLabel className="px-4 py-2 text-gray-700 font-bold">
-              My Account
-            </DropdownMenuLabel>
-            <DropdownMenuSeparator className="border-t border-gray-200" />
-            <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <Link to={"/signup"}>Profile</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <Link to={"/signup"}>Notification</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <Link to={"/signup"}>Books</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <Link to={"/signup"}>Settings</Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
-      <div className="container mx-auto px-4 py-8">
-        {/* My Courses Section */}
-        <h2 className="text-xl font-semibold mb-4">My Courses</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filterCourses(coursesOffered).map((course, index) => (
-            <CourseCard
-              key={index}
-              title={course.title}
-              description={course.description}
-              image={course.image}
-              progress={course.progress}
-            />
-          ))}
-        </div>
-
-        {/* Recommendations Section */}
-        <h2 className="text-xl font-semibold mt-12 mb-4">
-          You may also be interested in:
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filterCourses(recommendations).map((recommendation, index) => (
-            <CourseCard
-              key={index}
-              title={recommendation.title}
-              description={recommendation.description}
-              image={recommendation.image}
-            />
-          ))}
+          {/* Recommendations Section */}
+          <h2 className="text-xl font-semibold mt-12 mb-4">
+            You may also be interested in:
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filterCourses(recommendations).map((recommendation, index) => (
+              <CourseCard
+                key={index}
+                title={recommendation.title}
+                description={recommendation.description}
+                image={recommendation.image}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -110,3 +101,11 @@ const Courses = () => {
 };
 
 export default Courses;
+
+
+
+
+
+
+
+

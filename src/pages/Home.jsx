@@ -7,9 +7,11 @@ import Hero from "../components/Hero";
 import CourseTabs from "../components/CourseTabs";
 import TrusteesList from "../components/Trustees";
 import ReviewSlider from "../components/ReviewSlide";
+import { useDarkMode } from "../context/DarkModeContext";
 
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const {isDarkMode} = useDarkMode()
 
 
 
@@ -23,14 +25,14 @@ function Home() {
   }, []);
 
   return (
-    <main className="bg-gray-50 text-gray-800">
+    <main className={` ${isDarkMode ? "dark":"bg-gray-50"} text-gray-800`}>
       {/* Hero Section */}
       <section className="w-full">
         <Hero />
       </section>
 
       {/* Courses Section */}
-      <section className="w-full py-12 bg-white">
+      <section className="w-full py-12 ">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
             Explore Our Courses
@@ -40,7 +42,7 @@ function Home() {
       </section>
 
       {/* Reviews Section */}
-      <section className="w-full py-12 bg-gray-50">
+      <section className="w-full py-12 ">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
             What Our Students Say
@@ -50,7 +52,7 @@ function Home() {
       </section>
 
       {/* Team Section */}
-      <section className="w-full py-12 bg-white">
+      <section className="w-full py-1">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
             Meet the Team
@@ -60,7 +62,7 @@ function Home() {
       </section>
 
       {/* Trustees Section */}
-      <section className="w-full py-12 bg-gray-50">
+      <section className="w-full py-12 ">
         <div className="container flex flex-col items-center mx-auto px-4">
           <h2 className="text-sm text-center mb-8 lg:w-1/2">
           Over 8 companies trust our services and are optimistic that they will be the best in the world

@@ -39,7 +39,7 @@ function Header() {
                   ? `${
                       item.title === "Signin"
                         ? "bg-white flex items-center gap-4 px-3 py-2 font-bold rounded text-[#185c8a] hover:text-[#253540] hover:scale-110 transition-all duration-300"
-                        : "text-[#253540] font-semibold px-3 py-2 rounded hover:scale-110 transition-all duration-300"
+                        : "text-pink-600 font-semibold px-3 py-2 rounded hover:scale-110 transition-all duration-300"
                     }`
                   : `${
                       item.title === "Signin"
