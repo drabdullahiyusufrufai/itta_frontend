@@ -4,6 +4,7 @@ import CustomHeader from '../components/CustomHeader';
 import bgImage from "../assets/images/machine.jpg"
 import { teamMembers } from '../constants/Teams';
 import { services } from '../constants/service';
+import TeamCard from '../components/TeamCard';
 
 const AboutUs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -64,15 +65,10 @@ const AboutUs = () => {
         <h3 className="text-3xl font-semibold text-gray-700 mb-8">Our Team</h3>
         <div className="flex flex-wrap justify-center gap-5">
           {teamMembers.map((member, index) => (
-            <div 
-              key={index} 
-              className="bg-white shadow-lg rounded-lg w-40 p-4 text-center cursor-pointer"
-              onClick={() => openModal(member)}
-            >
-              <img src={member.img} alt={member.name} className="w-full h-40 rounded-md object-cover" />
-              <h4 className="text-gray-700 font-bold mt-4">{member.name}</h4>
-              <p className="text-gray-500 text-sm">{member.role}</p>
-            </div>
+             
+
+            <TeamCard team={member} key={index}/>
+        
           ))}
         </div>
       </div>
