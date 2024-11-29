@@ -45,11 +45,11 @@ const AuthForm = ({status, onSubmit, handleGoogleLogin}) => {
           {/* Sign In Form */}
           <form className="auth-form sign-in-form">
             <h2 className="title">Sign in</h2>
-            <div className="border-[1px] border-slate-400 flex items-center gap-5 bg-slate-50 px-2 my-1 rounded-lg">
+            <div className="border-[1px] border-slate-400 flex items-center mx-3 md:mx-0 gap-2 bg-slate-50 px-2 my-1 rounded-lg">
               <HiOutlineUser className="icon" />
               <input  className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" name='email' onChange={handleChange} />
             </div>
-            <div className="border-[1px] border-slate-400 flex items-center gap-5 bg-slate-50 px-2 my-1 rounded-lg">
+            <div className="border-[1px] border-slate-400 flex items-center gap-2 mx-3 md:mx-0 bg-slate-50 px-2 my-1 rounded-lg">
               <FaLock className="icon" />
               <input  className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" name='password' onChange={handleChange}  />
             </div>
@@ -68,15 +68,15 @@ const AuthForm = ({status, onSubmit, handleGoogleLogin}) => {
           {/* Sign Up Form */}
           <form className="auth-form sign-up-form ">
             <h2 className="title">Sign up</h2>
-            <div className=" flex border-[1px] border-slate-400 px-2 my-1 items-center gap-5 bg-slate-50   rounded-lg">
+            <div className=" flex border-[1px] border-slate-400 mx-3 md:mx-0 px-2 my-1 items-center gap-2 bg-slate-50   rounded-lg">
               <FaUser className="icon" />
               <input  className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" name='name' onChange={handleChange} />
             </div>
-            <div className=" flex border-[1px] border-slate-400 px-2 my-1 items-center gap-5 bg-slate-50   rounded-lg">
+            <div className=" flex border-[1px] border-slate-400 mx-3 md:mx-0 px-2 my-1 items-center gap-2 bg-slate-50   rounded-lg">
               <FaEnvelope className="icon" />
               <input  className='p-2 bg-transparent focus:outline-none my-1' type="email" placeholder="Email" name='email'  onChange={handleChange} />
             </div>
-            <div className=" flex border-[1px] border-slate-400 px-2 my-1 items-center gap-5 bg-slate-50   rounded-lg">
+            <div className=" flex border-[1px] border-slate-400 mx-3 md:mx-0 px-2 my-1 items-center gap-2 bg-slate-50   rounded-lg">
               <FaLock className="icon" />
               <input  className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" name='password' onChange={handleChange}  />
             </div>
