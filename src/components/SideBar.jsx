@@ -35,9 +35,15 @@ const SideBar = ({ title,navs, isSidebarOpen, toggleSidebar }) => {
                 </button>
         </div>
         <ul className="space-y-3">
-          <li>My Favorites</li>
-          <li>My Collections</li>
-          <li>My List</li>
+          {
+            navs.map((nav, index) => (
+              <li key={index}>
+                <Link to={nav.url} className="text-sm font-medium hover:text-primary dark:hover:text-textDark">
+                  {nav.title}
+                </Link>
+              </li>
+            ))
+          }
         </ul>
       </nav>
       <button

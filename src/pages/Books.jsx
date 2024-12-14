@@ -3,10 +3,14 @@ import { Section } from "../components/BookComponent";
 import { bookData } from "../constants/books";
 import SideBar from "../components/SideBar";
 import SearchBar from "../components/SearchBar";
+import { useDarkMode } from "../context/DarkModeContext";
+import { booksNavs } from "../constants/Navs";
+
 
 function Books() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const {isDarkMode, toggleDarkMode} = useDarkMode()
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
@@ -35,6 +39,7 @@ function Books() {
         isDarkMode={isDarkMode}
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
+        navs={booksNavs}
       />
       <div className="md:ml-64">
         <SearchBar handleSearch={handleSearch} toggleSidebar={toggleSidebar} />

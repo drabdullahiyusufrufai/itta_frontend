@@ -47,15 +47,16 @@ const AuthForm = ({status, onSubmit, handleGoogleLogin}) => {
         <div className="signin-signup">
           {/* Sign In Form */}
           <form className="auth-form sign-in-form">
-            <img src={avatar} className='rounded-full w-32' />
+          <img src={avatar} className='rounded-full w-32 border p-2 border-primary' />
+            
             <h2 className="title">Sign in</h2>
-            <div className="border-[1px] border-slate-400 flex items-center mx-3 md:mx-0 gap-2 bg-slate-50 px-2 my-1 rounded-lg">
+            <div className="border-[1px] border-slate-400 flex items-center mx-3 md:mx-0 gap-2 bg-slate-50 px-2 my-1 md:my-3 rounded-lg">
               <HiOutlineUser className="icon" />
-              <input  className='p-2 bg-transparent focus:outline-none my-1' type="text" placeholder="Username" name='email' onChange={handleChange} />
+              <input  className='p-2 bg-transparent focus:outline-none my-1 md:my-3' type="text" placeholder="Username" name='email' onChange={handleChange} />
             </div>
-            <div className="border-[1px] border-slate-400 flex items-center gap-2 mx-3 md:mx-0 bg-slate-50 px-2 my-1 rounded-lg">
+            <div className="border-[1px] border-slate-400 flex items-center gap-2 mx-3 md:mx-0 bg-slate-50 px-2 my-1 md:my-3 rounded-lg">
               <FaLock className="icon" />
-              <input  className='p-2 bg-transparent focus:outline-none my-1' type="password" placeholder="Password" name='password' onChange={handleChange}  />
+              <input  className='p-2 bg-transparent focus:outline-none my-1 md:my-3' type="password" placeholder="Password" name='password' onChange={handleChange}  />
             </div>
             <button  type="button" onClick={handleSubmit} value="Login" className="btn solid" >
               Sign In

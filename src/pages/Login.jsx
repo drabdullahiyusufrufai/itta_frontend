@@ -25,7 +25,7 @@ console.log("Attempting login with email:", email, "and password:", password);
     try {
       await signInWithRedirect(auth, googleProvider);
       console.log("Google login initiated");
-    } catch (error) {
+    } catch (error) {``
       console.error("Google login error:", error.message);
     }
   };

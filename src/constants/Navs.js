@@ -1,34 +1,120 @@
 export const navs  = [
     {
         title:"Home",
-        link:"/",
+        url:"/",
     },
     {
         title:"Courses",
-        link:"/courses",
+        url:"/courses",
     },
     {
         title:"Contacts",
-        link:"/contacts",
+        url:"/contacts",
     },{
         title:"About ",
-        link:"/about",
+        url:"/about",
     },
     {
 
         title:"Books",
-        link:"/books",
+        url:"/books",
     },
     {
         title:"Blog ",
-        link:"blogs",
+        url:"blogs",
     },
     {
         title:"Signup  ",
-        link:"/signup",
+        url:"/signup",
     },{
         title:"Signin",
-        link:"/signin",
+        url:"/signin",
     },
     
+]
+
+
+export const dashboardNavs = [
+    {
+        id:1,
+        title:"Dashboard",
+        url:"/"
+    },
+    {
+        id:2,
+        title:"Courses",
+        url:"/courses"
+    },
+    {
+        id:3,
+        title:"Profile",
+        url:"/profile"
+        
+    },
+    {
+        id:2,
+        title:"Settings",
+        url:"/settings"
+    },
+    {
+        id:4,
+        title:"Logout",
+        url:"/logout"
+    }
+]
+
+export const booksNavs = [
+    {
+        id:1,
+        title:"All Books",
+        url:"/books"
+    },
+    {
+        id:2,
+        title:"Popular Books",
+        url:"/books/popular"
+    },
+    {
+        id:3,
+        title:"New Releases",
+        url:"/books/new-releases"
+    },
+    {
+        id:4,
+        title:"Author's Books",
+        url:"/books/author"
+    },
+    {
+        id:5,
+        title:"Category's Books",
+        url:"/books/category"
+    }
+]
+
+export const coursesNavs = [
+    {
+        id:1,
+        title:"All Courses",
+        url:"/courses"
+    },
+    {
+        id:2,
+        title:"Popular Courses",
+        url:"/courses/popular"
+    },
+    {
+        id:3,
+        title:"New Releases",
+        url:"/courses/new-releases"
+    },
+    {
+        id:4,
+        title:"Instructor's Courses",
+        url:"/courses/instructor"
+    },
+    {
+        id:5,
+        title:"Category's Courses",
+        url:"/courses/category"
+    }
 ]

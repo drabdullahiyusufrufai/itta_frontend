@@ -11,7 +11,7 @@ function Header() {
   const location = useLocation();
 
   // Define routes where the header should be hidden
-  const hiddenRoutes = ["/blogs", "/courses", "/books"];
+  const hiddenRoutes = ["/blogs", "/courses", "/books","/dashboard"];
 
   // Check if the current route matches a hidden route
   const isHeaderHidden = hiddenRoutes.includes(location.pathname);
@@ -33,7 +33,7 @@ function Header() {
           {navs.map((item, index) => (
             <NavLink
               key={index}
-              to={item.link}
+              to={item.url}
               className={({ isActive }) =>
                 isActive
                   ? `${
@@ -70,7 +70,7 @@ function Header() {
               {navs.map((nav, index) => (
                 <NavLink
                   key={index}
-                  to={nav.link}
+                  to={nav.url}
                   className={({ isActive }) =>
                     isActive
                       ? "text-[#253540] font-semibold hover:underline transition-all duration-300"

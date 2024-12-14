@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { recommendations } from "../constants/data";
 import { coursesOffered } from "../constants/courses";
 import CourseCard from "../components/CourseCard";
+import { coursesNavs } from "../constants/Navs";
 
 import SideBar from "../components/SideBar";
 import SearchBar from "../components/SearchBar";
@@ -61,6 +62,7 @@ const Courses = () => {
       isDarkMode={isDarkMode}
       isSidebarOpen={isSidebarOpen}
       toggleSidebar={toggleSidebar}
+      navs={coursesNavs}
       title={"Courses"} />
       <div className="md:ml-64">
     

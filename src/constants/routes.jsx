@@ -9,6 +9,8 @@ import Contacts from "../pages/Contacts";
 import About from "../pages/About";
 import Books from "../pages/Books";
 import CheatSheetPage from "../pages/CheatSheets";
+import PdfView from "../pages/PdfView";
+import Dashboard from "../pages/student/Dashboard";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -20,7 +22,10 @@ const routes = [
   { path: "/courses", element: <Courses /> },
   { path: "/contacts", element: <Contacts /> },
   { path: "/books", element: <Books /> },
+  {path:"/pdf", element: <PdfView/>},
   { path: "/cheatsheets", element: <CheatSheetPage /> },
+  { path: "/dashboard", element: <Dashboard /> },
+
 ];
 
 export default routes;
