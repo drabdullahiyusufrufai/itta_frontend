@@ -3,6 +3,7 @@ import SideBar from "../../components/SideBar";
 import SearchBar from "../../components/SearchBar";
 import { dashboardNavs } from "../../constants/Navs";
 import { useDarkMode } from "../../context/DarkModeContext";
+import CoursePage from "../../components/TakeCourse";
 
 function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -26,8 +27,12 @@ function Dashboard() {
       <div className="md:ml-64">
         <SearchBar />
 
-        <div className="p-2">Hello world</div>
-      </div>
+            </div>
+
+
+            <section>
+              <CoursePage />
+            </section>
     </main>
   );
 }
