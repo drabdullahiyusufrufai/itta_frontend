@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useUser } from "../../context/UserContext";
 
 export default function Settings() {
   const [settings, setSettings] = useState({
@@ -8,6 +9,8 @@ export default function Settings() {
     notifications: true,
   });
 
+  const {user} = useUser()
+
   const handleChange = (e) => {
     setSettings({ ...settings, [e.target.name]: e.target.value });
   };
@@ -15,6 +18,17 @@ export default function Settings() {
   const toggleSetting = (key) => {
     setSettings((prev) => ({ ...prev, [key]: !prev[key] }));
   };
+
+  if (!user){
+
+    return (
+      <>
+      
+      Please sign in
+      </>
+    )
+    
+  }
 
   return (
     <div className="max-w-lg mx-auto p-6">
@@ -26,7 +40,7 @@ export default function Settings() {
             <input
               className="w-full p-2 border rounded"
               name="username"
-              value={settings.username}
+              value={user.displayName}
               onChange={handleChange}
             />
           </div>
@@ -36,7 +50,7 @@ export default function Settings() {
               className="w-full p-2 border rounded"
               name="email"
               type="email"
-              value={settings.email}
+              value={user.email}
               onChange={handleChange}
             />
           </div>
