@@ -11,7 +11,7 @@ import {
   } from "@radix-ui/react-dropdown-menu";
 import { Link } from 'react-router-dom';
 const SearchBar = ({ toggleSidebar, handleSearch }) => (
-    <div className="flex items-center justify-between gap-3 px-3 py-4 bg-[#0e314f] sticky top-0 z-40 ">
+    <div className="flex items-center justify-between gap-3 px-3 py-4 bg-secondary sticky top-0 z-40 ">
       <button
         className="block md:hidden text-white"
         onClick={toggleSidebar}
@@ -26,7 +26,7 @@ const SearchBar = ({ toggleSidebar, handleSearch }) => (
       />
       <div className="flex items-center space-x-4">
       <DropdownMenu>
-          <DropdownMenuTrigger className="px-4 py-2  flex items-center gap-4 rounded-md shadow ">
+          <DropdownMenuTrigger  className="px-4 py-2 bg-bgHover flex items-center gap-4 rounded-md shadow ">
             <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-lg font-bold">
         <FaUserCircle size={30} />
             

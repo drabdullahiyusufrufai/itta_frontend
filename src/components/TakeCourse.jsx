@@ -20,16 +20,7 @@ const CoursePage = () => {
   return (
     <div className="flex min-h-screen bg-orange-100">
       {/* Sidebar */}
-      <aside className="w-1/5 bg-orange-200 p-6 flex flex-col space-y-6">
-        <h1 className="text-2xl font-bold text-gray-800">Courses</h1>
-        <nav className="space-y-4 text-gray-700">
-          <a href="#" className="block hover:text-gray-900">📚 My Courses</a>
-          <a href="#" className="block hover:text-gray-900">🔎 Browse Courses</a>
-          <a href="#" className="block hover:text-gray-900">📂 My Categories</a>
-          <a href="#" className="block hover:text-gray-900">📊 Dashboard</a>
-        </nav>
-        <button className="mt-auto text-gray-600 hover:text-gray-800">🌙 Dark Mode</button>
-      </aside>
+     
 
       {/* Main Content */}
       <div className="flex-1 p-8">

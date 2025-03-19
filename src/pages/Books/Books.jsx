@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { Section } from "../components/BookComponent";
-import { bookData } from "../constants/books";
-import SideBar from "../components/SideBar";
-import SearchBar from "../components/SearchBar";
-import { useDarkMode } from "../context/DarkModeContext";
-import { booksNavs } from "../constants/Navs";
+import { Section } from "../../components/BookComponent";
+import { bookData } from "../../constants/books";
+import SideBar from "../../components/SideBar";
+import SearchBar from "../../components/SearchBar";
+import { useDarkMode } from "../../context/DarkModeContext";
+import { booksNavs } from "../../constants/Navs";
 
 
 function Books() {
@@ -33,16 +33,7 @@ function Books() {
 
   return (
     <div className={`min-h-screen  transition-all`}>
-      <SideBar
-        title={"Books"}
-        toggleDarkMode={toggleDarkMode}
-        isDarkMode={isDarkMode}
-        isSidebarOpen={isSidebarOpen}
-        toggleSidebar={toggleSidebar}
-        navs={booksNavs}
-      />
-      <div className="md:ml-64">
-        <SearchBar handleSearch={handleSearch} toggleSidebar={toggleSidebar} />
+
         <main className="p-6">
           {filteredBooks(bookData).map((section, index) => (
             <div key={index}>
@@ -51,7 +42,7 @@ function Books() {
           ))}
         </main>
       </div>
-    </div>
+    
   );
 }
 

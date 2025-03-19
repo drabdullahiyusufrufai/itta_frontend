@@ -100,7 +100,7 @@ export const coursesNavs = [
     {
         id:2,
         title:"Popular Courses",
-        url:"/courses/popular"
+        url:"/courses/popular-courses"
     },
     {
         id:3,
@@ -110,11 +110,11 @@ export const coursesNavs = [
     {
         id:4,
         title:"Instructor's Courses",
-        url:"/courses/instructor"
+        url:"/courses/instructors"
     },
     {
         id:5,
         title:"Category's Courses",
-        url:"/courses/category"
+        url:"/courses/categories"
     }
 ]

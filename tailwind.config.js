@@ -11,7 +11,10 @@ module.exports = {
         primary: "#2D5E88",
         darkPrimary: "#111827",
         textPrimary: "#2571A1",
+        secondary:"#1E3A55",
         textDark: "#F9FAFB",
+        bgHover:"#3E78A8",
+        bgSoft:"#B3D1E6"
       },
     },
   },
